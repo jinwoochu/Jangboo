@@ -9,7 +9,7 @@ router.get('/', function(req, res, next) {
 
 // 로그인 페이지
 router.get('/login', function(req, res, next) {
-   res.render("usersLogin");
+   res.render("userLogin");
 });
 
 // 로그인 밸리데이션

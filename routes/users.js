@@ -16,7 +16,7 @@ router.get('/login', function(req, res, next) {
 router.post("/login",function (req,res,next) {
     // var id = req.body.id;
     // var password = req.body.password;
-
+    console.log(req.body)
     // db에 접근해서 로그인 밸리데이션을 한다.
     
 })

@@ -183,18 +183,26 @@
         }
 
     </style>
+
 </head>
 <body>
 
     <div class="wrapper">
         <div class="container">
             <h1>Welcome</h1>
-            <form class="form">
-                <input type="text" placeholder="Username">
-                <input type="password" placeholder="Password">
+            <!--유저 로그인-->
+            <form class="form" method="post" action="/users/login">
+                <input type="text" name="id" placeholder="ID">
+                <input type="password" name="password" placeholder="PASSWORD">
                 <button type="submit" id="login-button">Sign in</button><br>
-                <button type="submit" id="register-button">Sign Up</button>
             </form>
+
+            <!--유저 회원가입-->
+            <form class="form" action="/users/register" method="get">
+                <button id="register-button">Sign Up</button>
+            </form>
+
+
         </div>
         <ul class="bg-bubbles">
             <li></li>
@@ -210,4 +218,8 @@
         </ul>
     </div>
 </body>
+
+
+
+
 </html>

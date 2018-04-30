@@ -23,16 +23,23 @@ router.post("/login",function (req,res,next) {
     // var password = req.body.password;
     console.log(req.body)
     // db에 접근해서 로그인 밸리데이션을 한다.
-    
-})
+
+    /////////////// 코드 작성 요망 ///////////////////
+});
 
 // 회원가입 페이지
 router.get('/register', function (req,res) {
     res.render('userRegister');
-})
+});
 
 // 회원가입 밸리데이션
+router.post("/register",function (req,res,next) {
 
+    console.log(req.body)
+    // db에 접근해서 회원가입 밸리데이션을 한다.
+
+    /////////////// 코드 작성 요망 ///////////////////
+});
 
 
 

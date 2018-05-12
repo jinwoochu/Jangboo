@@ -1,3 +1,5 @@
+
+
 var express = require('express');
 var router = express.Router();
 
@@ -5,6 +7,11 @@ var app = express();
 var path = require('path');
 
 app.use(express.static(path.join(__dirname, '../public')));
+
+// DB모듈 장착
+var DB = require('../db/user');
+
+
 
 /* GET users listing. */
 router.get('/', function(req, res, next) {
@@ -23,6 +30,9 @@ router.post("/login",function (req,res,next) {
     // var password = req.body.password;
     console.log(req.body)
     // db에 접근해서 로그인 밸리데이션을 한다.
+
+    DB.test(req,res);
+
 
     /////////////// 코드 작성 요망 ///////////////////
 });

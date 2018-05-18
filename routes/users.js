@@ -51,8 +51,4 @@ router.post("/register",function (req,res,next) {
     /////////////// 코드 작성 요망 ///////////////////
 });
 
-
-
-
-
 module.exports = router;

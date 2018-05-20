@@ -26,15 +26,10 @@ router.get('/login', function(req, res, next) {
 
 // 로그인 밸리데이션
 router.post("/login",function (req,res,next) {
-    // var id = req.body.id;
-    // var password = req.body.password;
-    console.log(req.body)
+
     // db에 접근해서 로그인 밸리데이션을 한다.
+    DB.login(req,res);
 
-    DB.test(req,res);
-
-
-    /////////////// 코드 작성 요망 ///////////////////
 });
 
 // 회원가입 페이지
@@ -45,10 +40,9 @@ router.get('/register', function (req,res) {
 // 회원가입 밸리데이션
 router.post("/register",function (req,res,next) {
 
-    console.log(req.body)
     // db에 접근해서 회원가입 밸리데이션을 한다.
+    DB.register(req,res);
 
-    /////////////// 코드 작성 요망 ///////////////////
 });
 
 module.exports = router;

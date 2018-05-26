@@ -6,28 +6,55 @@
     <link rel="stylesheet" href="/stylesheets/register.css" type="text/css">
 </head>
 <body>
-
     <!-- wrapper -->
     <div class="wrapper">
-        <!-- header -->
-        <div class="header">
-            <h1>Sign Up</h1>
-        </div>
-        <!-- end header -->
 
         <!-- container -->
         <div class="container">
+
+            <h1>Sign Up</h1>
+
+            <!-- form start -->
             <form action="/users/register" method="post">
-                <input type="text" placeholder="ID">
-                <input type="password" placeholder="Password">
-                <input type="password" placeholder="Password Check">
-                <input type="text" placeholder="Name">
-                <input type="text" placeholder="Birth Day">
-                <input type="text" placeholder="Phone Number">
-                <input type="input" placeholder="Man">
-                <input type="input" placeholder="Woman">
-                <button type="submit" id="signUp-button">Submit</button>
+                <input type="text" name="id" placeholder="아이디" class="text">
+                <input type="password" name="password" placeholder="비밀번호" class="text">
+                <input type="password" name="passwordCheck" placeholder="비밀번호 확인" class="text">
+                <input type="text" name="name" placeholder="이름" class="text">
+
+                <!-- sex start -->
+                <div class="sex-group">
+                    <!-- man -->
+                    <label>
+                        <input type="radio" name="sex" value="man">
+                        <div class="man box">
+                            <span> 남 </span>
+                        </div>
+                    </label>
+                    <!-- end man -->
+
+                    <!-- woman -->
+                    <label>
+                        <input type="radio" name="sex" value="woman">
+                        <div class="woman box">
+                            <span> 여 </span>
+                        </div>
+                    </label>
+                    <!-- end woman -->
+                </div>
+                <!-- sex end -->
+
+                <input type="text" name="birthDay" placeholder="생년월일" class="text">
+                <input type="text" name="phoneNumber" placeholder="휴대폰 번호" class="text">
+
+                <!-- btn start -->
+                <br>
+                <div id="btn">
+                    <button type="submit" id="signUp-button">가입하기</button>
+                </div>
+                <!-- btn end -->
             </form>
+            <!-- form end -->
+
         </div>
         <!-- end container -->
 

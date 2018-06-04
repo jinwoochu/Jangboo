@@ -72,4 +72,5 @@ html, body{
     font-weight: bold; /* 폰트 굵기(bold) */
     padding: 0px 24px; /* 좌 우 안쪽여백 지정 */
     margin-left: 4px; /* input-button 왼쪽 바깥 여백 늘리기(4) */
+    cursor: pointer; /* 커서지정 */
 }

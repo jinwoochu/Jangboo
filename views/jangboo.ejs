@@ -1,0 +1,147 @@
+<html ng-app="ionicApp">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no, width=device-width">
+
+  <link href="//code.ionicframework.com/nightly/css/ionic.css" rel="stylesheet">
+  <script src="//code.ionicframework.com/nightly/js/ionic.bundle.js"></script>
+
+</head>
+
+<body ng-controller="MyCtrl">
+<ion-content>
+  <ion-list can-swipe="true">
+    <div class="card" style="margin-top:5px;margin-bottom:0px;" ng-repeat="item in items track by $index">
+      <ion-item >
+        <div class="item item-divider item-icon-left calm">
+          <i class="icon ion-{{item.category}} "></i>
+          <span class="">{{item.date}}</span>
+          <span style="float:right;" class="">{{item.amount | currency:"$"}}</span>
+        </div>
+        <div class="item item-text-wrap" style="padding-bottom:0px;padding-top:8px;">
+          <div>
+            <h2>
+              <span>{{item.place}}</span>
+              <img  style="float:right;" class="item item-image" src="receipt.jpg">
+            </h2>
+          </div>
+          <div>
+            <h4>{{item.comment}}</h4>
+          </div>
+        </div>
+        <ion-option-button class="button-assertive icon ion-edit" ng-click="modal.show(); setDataModal($index)"></ion-option-button>
+        <ion-option-button class="button-light icon ion-trash-a" ng-click="removeData($index)"></ion-option-button>
+      </ion-item>
+    </div>
+  </ion-list>
+</ion-content>
+
+<script id="templates/modal.html" type="text/ng-template">
+  <ion-modal-view>
+    <ion-header-bar class="bar bar-header bar-calm">
+      <h1 class="title">Edit Expense</h1>
+      <button class="button button-clear button-primary" ng-click="modal.hide()">Cancel</button>
+    </ion-header-bar>
+    <ion-content class="padding">
+      <div class="list">
+        <label class="item item-input">
+          <span class="input-label">Date</span>
+          <input ng-model="obj.modalDate" type="text">
+        </label>
+        <label class="item item-input">
+          <span class="input-label">Place</span>
+          <input ng-model="obj.modalPlace" type="text">
+        </label>
+        <label class="item item-input">
+          <span class="input-label">Amount</span>
+          <input ng-model="obj.modalAmount" type="text">
+        </label>
+        <label class="item item-input">
+          <span class="input-label">Comment</span>
+          <input ng-model="obj.modalComment" type="text">
+        </label>
+        <button class="button button-full button-calm" ng-click="saveItem(obj)">Save</button>
+      </div>
+    </ion-content>
+  </ion-modal-view>
+</script>
+
+<script>
+    angular.module('ionicApp', ['ionic'])
+
+        .controller('MyCtrl', function($scope, $timeout,$ionicModal) {
+            $scope.items = [{
+                "date": "Dec 12, 2015",
+                "category": "beer",
+                "amount": 612.45,
+                "place": "여친이랑 놀러갔음",
+                "comment": "광안리 바닷가"
+            }, {
+                "date": "Jan 15, 2016",
+                "category": "fork",
+                "amount": 324.54,
+                "place": "여친이랑 놀러갔음",
+                "comment": "해운대 바닷가"
+            }, {
+                "date": "Feb 04, 2016",
+                "category": "pricetags",
+                "amount": 200.00,
+                "place": "동래역 스시 맛집",
+                "comment": "여자 친구랑 밥 사먹음"
+            },{
+                "date": "Feb 04, 2016",
+                "category": "pricetags",
+                "amount": 200.00,
+                "place": "서면 지하상가",
+                "comment": "여자 친구 옷 사줬음"
+            },{
+                "date": "Feb 04, 2016",
+                "category": "pricetags",
+                "amount": 200.00,
+                "place": "다대포",
+                "comment": "여자 친구랑 술 먹었음"
+            },{
+                "date": "Feb 04, 2016",
+                "category": "pricetags",
+                "amount": 200.00,
+                "place": "오륜대",
+                "comment": "여자 친구랑 놀러갔음"
+            }];
+
+            $ionicModal.fromTemplateUrl('templates/modal.html', {
+                scope: $scope,
+            }).then(function(modal, $index) {
+                $scope.modal = modal;
+                //alert($index);
+                //var item = $scope.items[$index];
+                $scope.place ="Wilde's";
+            });
+
+            $scope.setDataModal = function($index){
+                $scope.itemIndex = $index;
+                var item = $scope.items[$index];
+                $scope.obj={"modalDate":item.date, "modalPlace":item.place, "modalAmount":item.amount,             "modalComment":item.comment, "modalCategory":item.category};
+            };
+
+            $scope.saveItem =function(obj){
+                $scope.date = obj.modalDate;
+                $scope.place = obj.modalPlace;
+                $scope.comment = obj.modalComment;
+                $scope.amount = obj.modalAmount;
+                $scope.category = obj.modalCategory;
+                $scope.items[$scope.itemIndex]={"date":$scope.date,"place":$scope.place,"comment":$scope.comment,"amount":$scope.amount, "category":$scope.category};
+                $scope.modal.hide();
+            };
+
+            $scope.removeData = function($index){
+                var arr = $scope.items;
+                arr.splice($index,1);
+                $scope.items = arr;
+            };
+
+        });
+</script>
+
+</body>
+</html>

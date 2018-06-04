@@ -32,6 +32,10 @@ router.post("/login",function (req,res,next) {
 
 });
 
+router.get('/deposit', function(req, res, next) {
+    res.render("deposit");
+});
+
 // 회원가입 페이지
 router.get('/register', function (req,res) {
     res.render('userRegister');

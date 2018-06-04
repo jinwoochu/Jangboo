@@ -54,6 +54,13 @@ html, body{
     text-align: center; /* 폰트 정렬(중앙) */
 }
 
+/* Input number 화살표 제거 */
+.downloads input[type="number"]::-webkit-outer-spin-button,
+.downloads input[type="number"]::-webkit-inner-spin-button{
+    -webkit-appearance: none;
+    margin: 0;
+}
+
 /* Button */
 .downloads button{
     height: 60px; /* 세로 영역(60) */

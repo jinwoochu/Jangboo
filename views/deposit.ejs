@@ -20,11 +20,27 @@
             </div>
             <!-- 입력, 버튼 창 -->
             <div class="downloads">
-                <input type="text" placeholder="납부할 금액">
-                <button type="submit">금액 납부하기</button>
+                <input type="number" placeholder="납부할 금액" id="money">
+                <button type="submit" onclick="button_click();">금액 납부하기</button>
             </div>
         </div>
     </div>
 </div>
+<script>
+    function button_click() {
+        var money = document.getElementById("money").value;
+
+        <!-- 비 정상적인 입금일 경우 -->
+        if(money < 1000) alert("너무 적은 돈을 입력 하셨습니다.")
+        else if(money >= 1000000) alert("너무 많은 돈을 입력 하셨습니다.")
+
+        <!-- 정상적인 값이 들어왔을 경우 -->
+        else{
+            var check = confirm(money + "원을 입금 하시겠습니까?");
+            if(check) alert(money + "원 입금 하였습니다.")
+            else alert("입금이 취소 되었습니다.")
+        }
+    }
+</script>
 </body>
 </html>

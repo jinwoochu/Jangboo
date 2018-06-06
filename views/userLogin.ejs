@@ -4,6 +4,15 @@
     <meta charset="UTF-8">
     <title>유저 로그인</title>
     <link rel="stylesheet" href="/stylesheets/login.css" type="text/css">
+    <!--sweetalert-->
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+    <!--제이쿼리-->
+    <script
+            src="https://code.jquery.com/jquery-3.3.1.js"
+            integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60="
+            crossorigin="anonymous">
+    </script>
+
 </head>
 <body>
 
@@ -11,7 +20,7 @@
         <div class="container">
             <h1>Welcome</h1>
             <!--유저 로그인-->
-            <form class="form" method="post" action="/users/login">
+            <form class="form" id="login-form" method="post" action="/users/login">
                 <input type="text" name="id" placeholder="ID">
                 <input type="password" name="password" placeholder="PASSWORD">
                 <button type="submit" id="login-button">Sign in</button><br>
@@ -35,5 +44,41 @@
             <li></li>
         </ul>
     </div>
+
+    <script>
+
+        function request_ajax(type, url, data, callback) {
+            $.ajax({
+                url: url,
+                type: type,
+                data: data,
+                dataType: "json",
+                success: callback
+            });
+        }
+
+        $(document).ready(function() {
+
+            $('#login-form').on('submit', function(event) {
+                event.preventDefault();
+                var data = $(this).serialize();
+                request_ajax('POST', $(this).attr('action'), data, main);
+            });
+
+
+
+
+            function main(result) {
+                if (result.status == 0) {
+                    swal("로그인 실패",result.message,"error");
+                } else {
+                    window.location.href = "/users/home";
+                }
+            }
+        });
+
+
+    </script>
+
 </body>
 </html>

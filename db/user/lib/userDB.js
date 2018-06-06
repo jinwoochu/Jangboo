@@ -48,7 +48,7 @@ exports.register = function(req, res) {
 }
 
 
-// 유저 회원가입
+// 유저 로그인
 exports.login = function (req,res) {
 
 

@@ -18,6 +18,27 @@ html, body{
     background-image: url('cover_image.jpg'); /* 배경 이미지 삽입 */
 }
 
+
+/* 메뉴 바 영역 */
+.wrapper ul{
+    padding: 2%;
+    text-align: right;
+}
+
+/* 메뉴 속성 */
+.wrapper li{
+    display: inline-block;
+    margin-left: 5px;
+    font-size: 17px;
+    color: white;
+}
+
+/* 구분 선 나타내기 */
+.wrapper li#t{
+    border-right: 1px solid white;
+    padding-right: 8px;
+}
+
 /* 전체 내용 영역 */
 .content {
     position: absolute; /* 본문(body) 기준 위치 지정 */

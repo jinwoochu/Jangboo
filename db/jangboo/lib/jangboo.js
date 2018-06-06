@@ -15,23 +15,17 @@ var con = mysql.createConnection({
 // 유저 회원가입
 exports.deposit = function(req, res) {
 
-
-    console.log("넘어온다.");
-
-
-    var userName = "하드코딩";
+    var userName = "추진우";
     var depositMoney = req.body.money;
 
 
     var insertQuery = "INSERT INTO `deposits` (money, user_name) VALUES (?,?)";
     var insertQueryParams = [depositMoney, userName];
-    console.log(insertQuery)
-    console.log("=======")
-    console.log(insertQueryParams);
+
 
     con.query(insertQuery, insertQueryParams, function(err, result, field) {
         if (err) {
-            response = makeResponse(0, "뭘보냐 씨발", {key:"뭘보냐 씨발"});
+            response = makeResponse(0, "쿼리문 오류입니다.", {});
             res.json(response);
             return;
         } else {

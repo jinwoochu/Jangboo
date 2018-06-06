@@ -36,6 +36,10 @@ router.get('/deposit', function(req, res, next) {
     res.render("deposit");
 });
 
+router.get('/home', function(req, res, next) {
+    res.render("home");
+});
+
 // 회원가입 페이지
 router.get('/register', function (req,res) {
     res.render('userRegister');

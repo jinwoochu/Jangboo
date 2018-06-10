@@ -5,7 +5,6 @@ var router = express.Router();
 router.get('/', function(req, res, next) {
   // res.render('index', { title: 'BlockChain Based JangBoo' });
   res.redirect('/users/login');
-
 });
 
 

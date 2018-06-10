@@ -18,7 +18,6 @@ router.get('/', function(req, res, next) {
   res.send('respond with a resource');
 });
 
-
 // 로그인 페이지
 router.get('/login', function(req, res, next) {
    res.render("userLogin");
@@ -29,15 +28,6 @@ router.post("/login",function (req,res,next) {
 
     // db에 접근해서 로그인 밸리데이션을 한다.
     DB.login(req,res);
-
-});
-
-router.get('/deposit', function(req, res, next) {
-    res.render("deposit");
-});
-
-router.get('/home', function(req, res, next) {
-    res.render("home");
 });
 
 // 회원가입 페이지
@@ -47,10 +37,24 @@ router.get('/register', function (req,res) {
 
 // 회원가입 밸리데이션
 router.post("/register",function (req,res,next) {
-
     // db에 접근해서 회원가입 밸리데이션을 한다.
     DB.register(req,res);
+});
 
+
+// 메인 페이지
+router.get('/home', function(req, res, next) {
+    res.render("home");
+});
+
+// 입금 페이지
+router.get('/deposit', function(req, res, next) {
+    res.render("deposit");
+});
+
+// 조회 페이지
+router.get('/lookup', function(req, res, next) {
+    res.render("lookup");
 });
 
 module.exports = router;

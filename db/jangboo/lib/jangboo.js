@@ -19,8 +19,8 @@ exports.deposit = function(req, res) {
     var depositMoney = req.body.money;
 
 
-    var insertQuery = "INSERT INTO `deposits` (money, user_name) VALUES (?,?)";
-    var insertQueryParams = [depositMoney, userName];
+    var insertQuery = "INSERT INTO `jangboo` (money, user_name, kind) VALUES (?,?,?)";
+    var insertQueryParams = [depositMoney, userName, "deposit"];
 
 
     con.query(insertQuery, insertQueryParams, function(err, result, field) {
@@ -33,11 +33,7 @@ exports.deposit = function(req, res) {
             res.json(response);
         }
     });
-
-    
 }
-
-
 
 
 // 리스폰스 만드는 함수

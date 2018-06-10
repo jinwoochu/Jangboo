@@ -26,7 +26,6 @@ exports.register = function(req, res) {
     // var date = new Date();
     var birthDay = "2018-05-20";
     var phoneNumber = req.body.phoneNumber;
-    console.log("test");
 
     var insertQuery = "INSERT INTO `users` (id, password, user_name, birth_day, phone, sex) VALUES (?,?,?,?,?,?)";
     var insertQueryParams = [id, password, userName, birthDay, phoneNumber, sex];
@@ -51,7 +50,6 @@ exports.register = function(req, res) {
 // 유저 로그인
 exports.login = function (req,res) {
 
-
     var id = req.body.id;
     // var password = getSecretPassword(req.body.password);
     var password = req.body.password;
@@ -74,7 +72,7 @@ exports.login = function (req,res) {
             if (result[0].password === password) {
 
                 // 여기서 쿠키 심어야 할듯
-                // res.cookie('id', id, { signed: true });
+                res.cookie('id', id, { signed: true });
 
                 response = makeResponse(1, "로그인 성공", {});
                 res.json(response);
@@ -85,12 +83,16 @@ exports.login = function (req,res) {
                 return;
             }
         }
-
     });
+}
 
-
-    
-    
+// 로그인되어있는지 , 쿠키 확인
+exports.isLogined = function(req, res, next) {
+    if (req.signedCookies.id === undefined) {
+        res.redirect('/');
+    } else {
+        next();
+    }
 }
 
 

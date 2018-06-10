@@ -1,5 +1,3 @@
-
-
 var express = require('express');
 var router = express.Router();
 
@@ -15,7 +13,7 @@ var DB = require('../db/user');
 
 /* GET users listing. */
 router.get('/', function(req, res, next) {
-  res.send('respond with a resource');
+  res.redirect('users/login');
 });
 
 // 로그인 페이지
@@ -25,10 +23,10 @@ router.get('/login', function(req, res, next) {
 
 // 로그인 밸리데이션
 router.post("/login",function (req,res,next) {
-
     // db에 접근해서 로그인 밸리데이션을 한다.
     DB.login(req,res);
 });
+
 
 // 회원가입 페이지
 router.get('/register', function (req,res) {
@@ -56,5 +54,15 @@ router.get('/deposit', function(req, res, next) {
 router.get('/lookup', function(req, res, next) {
     res.render("lookup");
 });
+
+
+// 로그아웃
+router.get('/logout', function(req, res, next) {
+    res.clearCookie("id");
+    res.redirect('/');
+});
+
+
+
 
 module.exports = router;

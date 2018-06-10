@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>withdraw</title>
+    <link rel="stylesheet" href="/stylesheets/withdraw.css" type="text/css">
+    <!--sweetalert-->
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+    <!--제이쿼리-->
+    <script
+            src="https://code.jquery.com/jquery-3.3.1.js"
+            integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60="
+            crossorigin="anonymous">
+
+    </script>
+</head>
+<body>
+<!-- 이미지 삽입 영역 -->
+<div class="cover">
+    <!-- 메뉴바 + 전체 내용 -->
+    <div class="wrapper">
+        <ul>
+            <a href="/users/logout"><li>로그아웃</li></a>
+        </ul>
+        <!-- 내용 -->
+        <div class="content">
+            <!-- 제목 -->
+            <h1 class="texts">지출하기</h1>
+            <!-- 설명 -->
+            <div class="desc">
+                지출할 금액의 액수와 목적을 정확하게 입력하세요
+            </div>
+            <!-- 입력, 버튼 창 -->
+            <div class="downloads">
+                <input type="number" placeholder="지출할 금액" id="money">
+                <input type="text" placeholder="지출 목적" id="why">
+                <button type="submit" id="deposit_btt" onclick="click">지출하기</button>
+            </div>
+        </div>
+    </div>
+</div>
+<script>
+
+    function request_ajax(type, url, data, callback) {
+        $.ajax({
+            url: url,
+            type: type,
+            data: data,
+            dataType: "json",
+            success: callback
+        });
+    }
+
+    $(document).ready(function() {
+        $('#deposit_btt').on('click', function(event) {
+
+            var money = document.getElementById("money").value;
+            var jsonMoney = {'money':money}
+            <!-- 비 정상적인 입금일 경우 -->
+            if(money < 1000) swal("입금 금액이 너무 작아요!", "", "error")
+            else if(money >= 1000000) swal("입금 금액이 너무 많아요!", "", "error");
+
+            <!-- 정상적인 값이 들어왔을 경우 -->
+            else{
+                <!-- 입금 여부 confirm창 -->
+                var check = swal({
+                    title: money + "원 입금 할래요?",
+                    icon: "warning",
+                    buttons: true,
+                }) .then(function(check){ <!-- 동기식 : 확인창을 수행 후 밑을 수행 -->
+                    if(check) {
+
+                    //  포스트 날리면댐
+                        request_ajax('POST', "/jangboo", jsonMoney, main);
+                    }
+
+                    else swal("입금 취소!", "", "error");
+                })
+            }
+
+
+            // event.preventDefault();
+            // var data = $(this).serialize();
+            //
+        });
+
+        function main(result) {
+            if (result.status == 0) {
+                alert(result.message);
+            } else {
+               swal("입금 성공!", "", "success")
+                   .then(function (ok) {
+                       console.log(ok);
+                       if(ok) window.location.href = "/users/deposit";
+                   })
+            }
+        }
+    });
+
+</script>
+</body>
+</html>

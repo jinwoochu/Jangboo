@@ -1,0 +1,54 @@
+/* 전체영역 */
+html, body{
+    height: 100%; /* 세로 늘리기 */
+}
+
+/* 전체구역 */
+*{
+    outline: 0; /* 외곽선 제거 */
+    margin: 0; /* 여백 제거(바깥) */
+    padding: 0; /* 여백 제거(안쪽) */
+}
+
+/* 배경 이미지 삽입 블록  */
+.cover{
+    height: 100%; /* 세로 늘리기 */
+    background-size: cover; /* 이미지 크기 비율 유지 */
+    background-position: center; /* 이미지 위치 중앙정렬 */
+    background-image: url('./cover_image2.jpeg'); /* 배경 이미지 삽입 */
+}
+
+/* 메뉴 바 영역 */
+.wrapper ul{
+    padding: 2%;
+    text-align: right;
+}
+
+/* 메뉴 속성 */
+.wrapper li{
+    margin-left: 15px;
+    display: inline-block;
+    font-size: 17px;
+    color: white;
+}
+
+/* 전체 내용 영역 */
+.content {
+    text-align: center;
+}
+
+/* 텍스트 영역(제목) */
+.texts{
+    color: white; /* 색깔(흰) */
+    font-size: 60px; /* 크기(51) */
+    font-weight: 400; /* 굵기(bold) */
+    font-family: Georgia,"Times New Roman",Times,serif;
+}
+
+/* 텍스트 영역(내용) */
+.desc{
+    text-align: center;
+    color: white; /* 색깔(흰) */
+    margin-top: 30px; /* 텍스트 제목, 내용 바깥여백 지정 */
+    font-weight: 300; /* 굵기(600) */
+}

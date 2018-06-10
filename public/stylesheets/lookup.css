@@ -18,7 +18,6 @@ html, body{
     background-image: url('./cover_image2.jpeg'); /* 배경 이미지 삽입 */
 }
 
-
 /* 메뉴 바 영역 */
 .wrapper ul{
     padding: 2%;
@@ -36,7 +35,6 @@ html, body{
 /* 전체 내용 영역 */
 .content {
     text-align: center;
-    padding-top: 230px;
 }
 
 /* 텍스트 영역(제목) */
@@ -45,8 +43,6 @@ html, body{
     font-size: 60px; /* 크기(51) */
     font-weight: 400; /* 굵기(bold) */
     font-family: Georgia,"Times New Roman",Times,serif;
-    border-bottom: 1px solid white;
-    padding-bottom: 20px;
 }
 
 /* 텍스트 영역(내용) */

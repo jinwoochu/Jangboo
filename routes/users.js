@@ -55,6 +55,11 @@ router.get('/lookup',DB.isLogined,function(req, res, next) {
     res.render("lookup");
 });
 
+// 지출 페이지
+router.get('/withdraw',function(req, res, next) {
+    res.render("withdraw");
+});
+
 
 // 로그아웃
 router.get('/logout', function(req, res, next) {

@@ -12,16 +12,14 @@ var con = mysql.createConnection({
 });
 
 
-// 유저 회원가입
+// 입금
 exports.deposit = function(req, res) {
 
     var userName = "추진우";
     var depositMoney = req.body.money;
 
-
     var insertQuery = "INSERT INTO `jangboo` (money, user_name, kind) VALUES (?,?,?)";
     var insertQueryParams = [depositMoney, userName, "deposit"];
-
 
     con.query(insertQuery, insertQueryParams, function(err, result, field) {
         if (err) {

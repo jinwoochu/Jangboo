@@ -41,17 +41,17 @@ router.post("/register",function (req,res,next) {
 
 
 // 메인 페이지
-router.get('/home', function(req, res, next) {
+router.get('/home',DB.isLogined, function(req, res, next) {
     res.render("home");
 });
 
 // 입금 페이지
-router.get('/deposit', function(req, res, next) {
+router.get('/deposit', DB.isLogined, function(req, res, next) {
     res.render("deposit");
 });
 
 // 조회 페이지
-router.get('/lookup', function(req, res, next) {
+router.get('/lookup',DB.isLogined,function(req, res, next) {
     res.render("lookup");
 });
 

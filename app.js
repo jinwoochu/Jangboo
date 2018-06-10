@@ -9,6 +9,7 @@ var bodyParser = require('body-parser');
 var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
 var jangbooRouter = require('./routes/jangboo');
+var adminsRouter = require('./routes/admins');
 
 
 
@@ -31,6 +32,7 @@ app.use(bodyParser());
 app.use('/', indexRouter);
 app.use('/users', usersRouter);
 app.use('/jangboo', jangbooRouter);
+app.use('/admins', adminsRouter);
 
 
 

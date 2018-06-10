@@ -27,16 +27,10 @@ html, body{
 
 /* 메뉴 속성 */
 .wrapper li{
+    margin-left: 15px;
     display: inline-block;
-    margin-left: 5px;
     font-size: 17px;
     color: white;
-}
-
-/* 구분 선 나타내기 */
-.wrapper li#t{
-    border-right: 1px solid white;
-    padding-right: 8px;
 }
 
 /* 전체 내용 영역 */

@@ -63,7 +63,6 @@ router.get('/withdraw',function(req, res, next) {
 });
 
 
-
 // 로그아웃
 router.get('/logout', function(req, res, next) {
     res.clearCookie("id");

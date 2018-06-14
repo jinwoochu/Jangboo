@@ -60,10 +60,15 @@ exports.allSearch = function(req, res) {
             res.json(response);
             return;
         }
-        console.log("로우즈");
-        console.log(rows);
-        console.log("로우즈 길이");
-        console.log(rows.length)
+
+        for(var i =0; i<rows.length;i++){
+            // rows[i].reg_time = rows[i].reg_time.toJSON().toString().slice(0, 19).replace('T', ' ');
+            rows[i].reg_time = rows[i].reg_time.toLocaleString();
+            if(parseInt(rows[i].reg_time.toLocaleString().split("-")[1])<10){ // 달이 10 보다 작으면 0추가
+                rows[i].reg_time = rows[i].reg_time.toLocaleString().replace(rows[i].reg_time.toLocaleString().split("-")[1], "0"+ rows[i].reg_time.toLocaleString().split("-")[1])
+            }
+        }
+
         res.render("lookup",{searchData:rows, searchLen:rows.length}); // 장부에 있는 내역 받아야됌.
     });
 

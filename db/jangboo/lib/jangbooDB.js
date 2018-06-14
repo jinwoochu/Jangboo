@@ -44,15 +44,31 @@ exports.deposit = function(req, res) {
                 res.json(response);
             }
         });
+    });
+}
 
+
+// 전체 내역 조회
+exports.allSearch = function(req, res) {
+    console.log("넘어온다.");
+
+    var selectQuery = "SELECT * FROM jangboo;";
+
+    con.query(selectQuery, function(err, rows, fields) {
+        if (err) {
+            response = makeResponse(0, "내부 오류입니다.", {});
+            res.json(response);
+            return;
+        }
+        console.log("로우즈");
+        console.log(rows);
+        console.log("로우즈 길이");
+        console.log(rows.length)
+        res.render("lookup",{searchData:rows, searchLen:rows.length}); // 장부에 있는 내역 받아야됌.
     });
 
 
-
-
-
 }
-
 
 
 

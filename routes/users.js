@@ -63,7 +63,7 @@ router.get('/deposit', DB.isLogined, function(req, res, next) {
 // 조회 페이지
 router.get('/lookup',DB.isLogined,function(req, res, next) {
 
-    res.render("lookup"); // 장부에 있는 내역 받아야됌.
+    jangbooDB.allSearch(req,res);
 });
 
 // 마이 페이지

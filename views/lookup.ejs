@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <title>Home</title>
     <link rel="stylesheet" href="/stylesheets/lookup.css" type="text/css">
+    <link rel="stylesheet" href="http://fonts.googleapis.com/earlyaccess/notosanskr.css">
 </head>
 <body>
 <!-- 이미지 삽입 영역 -->
@@ -20,10 +21,39 @@
         <!-- 내용 -->
         <div class="content">
             <!-- 제목 -->
-            <h1 class="texts"> LOOK UP PAGE </h1>
-            <!-- 설명 -->
-            <div class="desc">
-                이 페이지는 Look Up 입니다.
+            <div class="title">
+                <h1 id="texts"> 결제내역조회 </h1>
+            </div>
+
+            <div class="container">
+                <!-- 전체, 대기, 완료 선택 라디오 버튼 -->
+                <form>
+                    <div class="choice-group">
+                        <!-- 전체 -->
+                        <label>
+                            <input type="radio" name="choice" value="all">
+                            <div class="all box">
+                                <span> 전체내역 </span>
+                            </div>
+                        </label>
+
+                        <!-- 대기 -->
+                        <label>
+                            <input type="radio" name="choice" value="wait">
+                            <div class="wait box">
+                                <span> 대기내역 </span>
+                            </div>
+                        </label>
+
+                        <!-- 완료 -->
+                        <label>
+                            <input type="radio" name="choice" value="complete">
+                            <div class="complete box">
+                                <span> 완료내역 </span>
+                            </div>
+                        </label>
+                    </div>
+                </form>
             </div>
         </div>
     </div>

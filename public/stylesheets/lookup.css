@@ -1,21 +1,21 @@
-/* 전체영역 */
+/* root */
 html, body{
     height: 100%; /* 세로 늘리기 */
 }
 
-/* 전체구역 */
+/* 전체 */
 *{
     outline: 0; /* 외곽선 제거 */
     margin: 0; /* 여백 제거(바깥) */
     padding: 0; /* 여백 제거(안쪽) */
 }
 
-/* 배경 이미지 삽입 블록  */
+/* 배경 */
 .cover{
     height: 100%; /* 세로 늘리기 */
     background-size: cover; /* 이미지 크기 비율 유지 */
     background-position: center; /* 이미지 위치 중앙정렬 */
-    background-image: url('./cover_image2.jpeg'); /* 배경 이미지 삽입 */
+    background-image: url('./cover_lookup.jpg'); /* 배경 이미지 삽입 */
 }
 
 /* 메뉴 바 영역 */
@@ -29,26 +29,48 @@ html, body{
     margin-left: 15px;
     display: inline-block;
     font-size: 17px;
-    color: white;
+    color: black;
 }
 
-/* 전체 내용 영역 */
-.content {
+/* 제목 영역 */
+.title{
+    text-align: center; /* 제목 영역 왼쪽 정렬 */
+}
+
+/* 제목 */
+.title #texts{
+    font-family: 'Noto Sans KR', sans-serif; /* 폰트 지정 */
+    font-size: 50px; /* 크기 지정 */
+    margin-bottom: 1%;
+}
+
+/* 선택 라디오 박스 */
+form .choice-group{
     text-align: center;
 }
 
-/* 텍스트 영역(제목) */
-.texts{
-    color: white; /* 색깔(흰) */
-    font-size: 60px; /* 크기(51) */
-    font-weight: 400; /* 굵기(bold) */
-    font-family: Georgia,"Times New Roman",Times,serif;
+/* 라디오 버튼 */
+form input[type="radio"]{
+    display: none;
 }
 
-/* 텍스트 영역(내용) */
-.desc{
-    text-align: center;
-    color: white; /* 색깔(흰) */
-    margin-top: 30px; /* 텍스트 제목, 내용 바깥여백 지정 */
-    font-weight: 300; /* 굵기(600) */
+/* 체크된 라디오 버튼 */
+form input[type="radio"]:checked +.box {
+    background-color: rgba(255, 255, 255, 0.7); /* 레이블 배경지정 */
+}
+
+/* 라디오 버튼 공통 클래스 */
+form .box{
+    border-radius: 3px; /* 테두리 모양지정 */
+    border: 1px solid rgba(0, 0, 0, 0.4);
+    background-color: rgba(255, 255, 255, 0.2);
+    display: inline-block; /* 컨테이너 가로 정렬 */
+    width: 10%; /* 가로길이 조절 */
+    padding: 10px; /* 창 크기 조절 */
+    cursor: pointer; /* 선택 시 포인터 모양 설정 */
+    /* 폰트 모양 색깔 굵기 지정 */
+    font-family: 'Noto Sans KR', sans-serif;
+    font-weight: 100;
+    font-size: 18px;
+    color: black;
 }

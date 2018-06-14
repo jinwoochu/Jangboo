@@ -74,3 +74,41 @@ form .box{
     font-size: 18px;
     color: black;
 }
+
+.table-group{
+    margin-top: 1%;
+}
+
+table{
+    margin: 0 auto;
+}
+
+table.type09 {
+    border-collapse: collapse;
+    text-align: center;
+    line-height: 1.5;
+}
+table.type09 thead th {
+    padding: 10px;
+    font-weight: bold;
+    font-size: 20px;
+    vertical-align: top;
+    color: #369;
+    border-bottom: 3px solid #036;
+    font-family: 'Noto Sans KR', sans-serif;
+}
+table.type09 tbody th {
+    width: 150px;
+    padding: 10px;
+    font-weight: bold;
+    vertical-align: top;
+    border-bottom: 1px solid #ccc;
+    background: #f3f6f7;
+}
+table.type09 td {
+    width: 350px;
+    padding: 10px;
+    vertical-align: top;
+    border-bottom: 1px solid #ccc;
+    background: #f3f6f7;
+}

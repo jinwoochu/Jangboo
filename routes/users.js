@@ -8,6 +8,7 @@ app.use(express.static(path.join(__dirname, '../public')));
 
 // DB모듈 장착
 var DB = require('../db/user');
+var jangbooDB = require('../db/jangboo');
 
 
 
@@ -61,7 +62,8 @@ router.get('/deposit', DB.isLogined, function(req, res, next) {
 
 // 조회 페이지
 router.get('/lookup',DB.isLogined,function(req, res, next) {
-    res.render("lookup");
+
+    res.render("lookup"); // 장부에 있는 내역 받아야됌.
 });
 
 // 마이 페이지

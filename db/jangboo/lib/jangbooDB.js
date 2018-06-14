@@ -15,23 +15,48 @@ var con = mysql.createConnection({
 // 입금
 exports.deposit = function(req, res) {
 
-    var userName = "추진우";
+    var searchId = req.signedCookies.id;
     var depositMoney = req.body.money;
 
-    var insertQuery = "INSERT INTO `jangboo` (money, user_name, kind) VALUES (?,?,?)";
-    var insertQueryParams = [depositMoney, userName, "deposit"];
 
-    con.query(insertQuery, insertQueryParams, function(err, result, field) {
+    var selectQuery = "SELECT * FROM users WHERE id= ?;";
+    var selectQueryParams = [searchId];
+
+    con.query(selectQuery, selectQueryParams, function(err, rows, fields) {
         if (err) {
-            response = makeResponse(0, "쿼리문 오류입니다.", {});
+            response = makeResponse(0, "해당 쿠키값을 가진 ID가 없습니다.", {});
             res.json(response);
             return;
-        } else {
-            response = makeResponse(1, "모든 로직이 정상처리 되었습니다.", {});
-            res.json(response);
         }
+        console.log(rows[0].user_name);
+        var userName = rows[0].user_name;
+
+        var insertQuery = "INSERT INTO `jangboo` (money, user_name, kind) VALUES (?,?,?)";
+        var insertQueryParams = [depositMoney, userName, "deposit"];
+
+        con.query(insertQuery, insertQueryParams, function(err, result, field) {
+            if (err) {
+                response = makeResponse(0, "데이터 삽입 오류", {});
+                res.json(response);
+                return;
+            } else {
+                response = makeResponse(1, "모든 로직이 정상처리 되었습니다.", {});
+                res.json(response);
+            }
+        });
+
     });
+
+
+
+
+
 }
+
+
+
+
+
 
 
 // 리스폰스 만드는 함수

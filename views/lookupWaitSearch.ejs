@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Home</title>
+    <link rel="stylesheet" href="/stylesheets/lookup.css" type="text/css">
+    <link rel="stylesheet" href="http://fonts.googleapis.com/earlyaccess/notosanskr.css">
+    <link rel="stylesheet" href="http://fonts.googleapis.com/earlyaccess/jejumyeongjo.css">
+</head>
+<body>
+<!-- 이미지 삽입 영역 -->
+<div class="cover">
+    <!-- 메뉴바 + 전체 내용 -->
+    <div class="wrapper">
+        <ul>
+            <a href="/users/home"><li>홈</li></a>
+            <a href="/users/deposit"><li>입금</li></a>
+            <a href="/users/lookup"><li>조회</li></a>
+            <a href="/users/mypage"><li>마이페이지</li></a>
+            <a href="/users/logout"><li>로그아웃</li></a>
+        </ul>
+        <!-- 내용 -->
+        <div class="content">
+            <!-- 제목 -->
+            <div class="title">
+                <h1 id="texts"> 결제내역조회 </h1>
+            </div>
+
+            <div class="container">
+                <!-- 전체, 대기, 완료 선택 라디오 버튼 -->
+                <div class="choice-group">
+                    <!-- 전체 -->
+                    <a href="/users/lookupAllSearch"><label>
+                            <input type="radio" name="choice" value="all">
+                            <div class="all box">
+                                <span> 전체내역 </span>
+                            </div>
+                        </label></a>
+
+                    <!-- 대기 -->
+                    <a href="/users/lookupWaitSearch"><label>
+                            <input type="radio" name="choice" value="wait">
+                            <div class="wait box">
+                                <span> 대기내역 </span>
+                            </div>
+                        </label></a>
+
+                    <!-- 완료 -->
+                    <a href="/users/lookupConfirmSearch"><label>
+                            <input type="radio" name="choice" value="complete">
+                            <div class="complete box">
+                                <span> 완료내역 </span>
+                            </div>
+                        </label></a>
+                </div>
+
+                <div class="table-group">
+                    <table class="type09">
+                        <thead>
+                        <tr>
+                            <th scope="cols">일시</th>
+                            <th scope="cols">금액</th>
+                            <th scope="cols">이름</th>
+                            <th scope="cols">상태</th>
+                            <th scope="cols">분류</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        <% for(var i = 0 ; i < searchLen ; i++) { %>
+                            <tr>
+                                <th scope="row"> <%= searchData[i].reg_time %> </th>
+                                <td><%= searchData[i].money %></td>
+                                <td><%= searchData[i].user_name %></td>
+                                <td><%= searchData[i].status %></td>
+                                <td><%= searchData[i].kind %></td>
+                            </tr>
+                        <% } %>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+</html>

@@ -20,7 +20,9 @@
     <!-- 메뉴바 + 전체 내용 -->
     <div class="wrapper">
         <ul>
-            <a href="/users/logout"><li>로그아웃</li></a>
+            <a href="/admins/withdraw"><li>지출하기</li></a>
+            <a href="/admins/permit"><li>대기내역</li></a>
+            <a href="/admins/logout"><li>로그아웃</li></a>
         </ul>
         <!-- 내용 -->
         <div class="content">
@@ -35,6 +37,9 @@
                 <input type="number" placeholder="지출할 금액" id="money">
                 <input type="text" placeholder="지출 목적" id="why">
                 <button type="submit" id="deposit_btt" onclick="click">지출하기</button>
+                <div class="money">
+                    <h1> 잔여금액 : </h1>
+                </div>
             </div>
         </div>
     </div>

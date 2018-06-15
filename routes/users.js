@@ -87,14 +87,6 @@ router.get('/mypage',function(req, res, next) {
     res.render("mypage");
 });
 
-
-// 지출 페이지 -- admin.js로 넘길것임 나중에
-router.get('/withdraw',function(req, res, next) {
-    res.render("withdraw");
-});
-
-
-
 // 로그아웃
 router.get('/logout', function(req, res, next) {
     res.clearCookie("id");

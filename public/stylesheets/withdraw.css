@@ -89,3 +89,12 @@ html, body{
     margin-left: 4px; /* input-button 왼쪽 바깥 여백 늘리기(4) */
     cursor: pointer; /* 커서지정 */
 }
+
+.money{
+    margin-top: 5%;
+}
+
+.money h1{
+    color: white;
+    font-size: 40px;
+}

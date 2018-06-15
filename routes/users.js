@@ -60,11 +60,27 @@ router.get('/deposit', DB.isLogined, function(req, res, next) {
     res.render("deposit");
 });
 
-// 조회 페이지
+// 조회 메인페이지
 router.get('/lookup',DB.isLogined,function(req, res, next) {
+    res.render('lookupMain');
+});
 
+// 전체내역 조회
+router.get('/lookupAllSearch',DB.isLogined,function(req, res, next) {
     jangbooDB.allSearch(req,res);
 });
+
+// 대기내역 조회
+router.get('/lookupWaitSearch',DB.isLogined,function(req, res, next) {
+    jangbooDB.waitSearch(req,res);
+});
+
+// 완료내역 조회
+router.get('/lookupConfirmSearch',DB.isLogined,function(req, res, next) {
+    jangbooDB.confirmSearch(req,res);
+});
+
+
 
 // 마이 페이지
 router.get('/mypage',function(req, res, next) {

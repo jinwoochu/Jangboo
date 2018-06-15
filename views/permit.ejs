@@ -13,9 +13,9 @@
     <!-- 메뉴바 + 전체 내용 -->
     <div class="wrapper">
         <ul>
-            <a href="/users/withdraw"><li>지출하기</li></a>
-            <a href="/users/permit"><li>대기내역</li></a>
-            <a href="/users/logout"><li>로그아웃</li></a>
+            <a href="/admins/withdraw"><li>지출하기</li></a>
+            <a href="/admins/permit"><li>대기내역</li></a>
+            <a href="/admins/logout"><li>로그아웃</li></a>
         </ul>
         <!-- 내용 -->
         <div class="content">
@@ -34,6 +34,7 @@
                             <th scope="cols">이름</th>
                             <th scope="cols">상태</th>
                             <th scope="cols">분류</th>
+                            <th scope="cols">승인</th>
                         </tr>
                         </thead>
                         <tbody>
@@ -44,7 +45,7 @@
                             <td><%= searchData[i].user_name %></td>
                             <td><%= searchData[i].status %></td>
                             <td><%= searchData[i].kind %></td>
-                            <button> 승인 </button>
+                            <td><button> 승인 </button></td>
                         </tr>
                         <% } %>
                         </tbody>

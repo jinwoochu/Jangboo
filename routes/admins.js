@@ -78,6 +78,7 @@ router.post("/confirmWaitList",function (req,res,next) {
 router.get('/logout', function(req, res, next) {
     res.clearCookie("id");
     res.redirect('/admins/login');
+    // 민경환 ㅡㅡ
 });
 
 

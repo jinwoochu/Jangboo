@@ -44,6 +44,11 @@ html, body{
     margin-bottom: 1%;
 }
 
+/* 링크 버튼 */
+a{
+    text-decoration: none;
+}
+
 /* 선택 라디오 박스 */
 .choice-group{
     text-align: center;

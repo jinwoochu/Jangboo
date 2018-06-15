@@ -64,18 +64,20 @@ router.get('/withdraw',function(req, res, next) {
 
 // 승인 내역 페이지 (대기 목록에 있는 지출 목록을 승인해)
 router.get('/permit',function(req, res, next) {
-
     jangbooDB.waitSearchAdmin(req,res);
-
 });
 
+// 입금 대기목록 승인
+router.post("/confirmWaitList",function (req,res,next) {
 
+    adminDB.confirmWaitList(req,res);
+});
 
 
 // 로그아웃
 router.get('/logout', function(req, res, next) {
     res.clearCookie("id");
-    res.redirect('/');
+    res.redirect('/admins/login');
 });
 
 

@@ -96,6 +96,31 @@ exports.isLogined = function(req, res, next) {
     }
 }
 
+exports.confirmWaitList = function (req,res) {
+    console.log("넘오!@#!@");
+    console.log(req.body);
+    var number = req.body.number;
+
+
+    // UPDATE `student` SET name='이진경' WHERE id=1;
+
+    var selectQuery = "UPDATE jangboo SET status = 'confirm' WHERE u_num=?;";
+    var selectQueryParams = [number];
+
+    console.log(selectQuery)
+
+    // 아이디가 먼저 있는지 확인한다.
+    con.query(selectQuery, selectQueryParams, function(err, result, field) {
+        if (err) {
+            response = makeResponse(0, "잘못된 쿼리문입니다.", {});
+            res.json(response);
+            return;
+        }
+        response = makeResponse(1, "정상적으로 성공했습니다.", {});
+        res.json(response);
+    });
+}
+
 
 
 

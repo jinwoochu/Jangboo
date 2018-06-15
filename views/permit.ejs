@@ -6,6 +6,17 @@
     <link rel="stylesheet" href="/stylesheets/lookup.css" type="text/css">
     <link rel="stylesheet" href="http://fonts.googleapis.com/earlyaccess/notosanskr.css">
     <link rel="stylesheet" href="http://fonts.googleapis.com/earlyaccess/jejumyeongjo.css">
+
+    <!--sweetalert-->
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+    <!--제이쿼리-->
+    <script
+            src="https://code.jquery.com/jquery-3.3.1.js"
+            integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60="
+            crossorigin="anonymous">
+
+    </script>
+
 </head>
 <body>
 <!-- 이미지 삽입 영역 -->
@@ -41,11 +52,12 @@
                         <% for(var i = 0 ; i < searchLen ; i++) { %>
                         <tr>
                             <th scope="row"> <%= searchData[i].reg_time %> </th>
+                            <td hidden><%= searchData[i].u_num %></td>
                             <td><%= searchData[i].money %></td>
                             <td><%= searchData[i].user_name %></td>
                             <td><%= searchData[i].status %></td>
                             <td><%= searchData[i].kind %></td>
-                            <td><button> 승인 </button></td>
+                            <td><button class="checkBtn"> 승인 </button></td>
                         </tr>
                         <% } %>
                         </tbody>
@@ -54,5 +66,80 @@
             </div>
     </div>
 </div>
+</div>
 </body>
+
+<script>
+
+    function request_ajax(type, url, data, callback) {
+        $.ajax({
+            url: url,
+            type: type,
+            data: data,
+            dataType: "json",
+            success: callback
+        });
+    }
+
+    $(document).ready(function() {
+
+        $(".checkBtn").click(function() {
+
+            var str = ""
+            var tdArr = new Array();	// 배열 선언
+            var checkBtn = $(this);
+
+            // checkBtn.parent() : checkBtn의 부모는 <td>이다.
+            // checkBtn.parent().parent() : <td>의 부모이므로 <tr>이다.
+            var tr = checkBtn.parent().parent();
+            var td = tr.children();
+
+            console.log("클릭한 Row의 모든 데이터 : " + tr.text());
+
+            var no = td.eq(0).text();
+
+            var u_num = td.eq(1).text();
+            var jsonData = {number:u_num}
+            console.log(u_num);
+
+            var check = swal({
+                title: "승인 하시겠습니까?",
+                icon: "warning",
+                buttons: true,
+            }) .then(function(check){ <!-- 동기식 : 확인창을 수행 후 밑을 수행 -->
+                if(check) {
+
+                    //  포스트 날리면댐
+                    // DB u_num 주고 그 새끼 상태값을 wait -> confirm으로 변경
+                    request_ajax('POST', "/admins/confirmWaitList", jsonData, main);
+                }
+
+                else swal("승인 취소!", "", "error");
+            })
+
+
+
+
+            // 반복문을 이용해서 배열에 값을 담아 사용할 수 도 있다.
+            td.each(function (i) {
+                tdArr.push(td.eq(i).text());
+            });
+        })
+
+
+
+        function main(result) {
+            if (result.status == 0) {
+                alert(result.message);
+            } else {
+                swal("승인 완료!", "", "success")
+                    .then(function (ok) {
+                        if(ok) window.location.href = "/admins/permit";
+                    })
+            }
+        }
+    });
+
+</script>
+
 </html>

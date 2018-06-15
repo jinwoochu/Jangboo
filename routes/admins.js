@@ -8,7 +8,7 @@ app.use(express.static(path.join(__dirname, '../public')));
 
 // DB모듈 장착
 var adminDB = require('../db/admin');
-
+var jangbooDB = require('../db/jangboo');
 
 
 /* GET users listing. */
@@ -57,10 +57,19 @@ router.get('/lookup',function(req, res, next) {
     res.render("lookup");
 });
 
-// 지출 페이지 -- admin.js로 넘길것임 나중에
+// 지출 페이지
 router.get('/withdraw',function(req, res, next) {
     res.render("withdraw");
 });
+
+// 승인 내역 페이지 (대기 목록에 있는 지출 목록을 승인해)
+router.get('/permit',function(req, res, next) {
+
+    jangbooDB.waitSearchAdmin(req,res);
+
+});
+
+
 
 
 // 로그아웃

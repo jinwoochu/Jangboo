@@ -93,7 +93,10 @@ router.get('/withdraw',function(req, res, next) {
     res.render("withdraw");
 });
 
-
+// 지출 페이지 -- admin.js로 넘길것임 나중에
+router.get('/permit',function(req, res, next) {
+    res.render("permit");
+});
 
 // 로그아웃
 router.get('/logout', function(req, res, next) {

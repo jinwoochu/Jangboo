@@ -103,21 +103,19 @@ table.type09 thead th {
     font-family: 'Noto Sans KR', sans-serif;
 }
 table.type09 tbody th {
-    width: 150px;
+    width: 350px;
     padding: 10px;
     font-weight: bold;
-    vertical-align: top;
     border-bottom: 1px solid #ccc;
-    background: #f3f6f7;
+    background: #F0F7F8;
     font-family: 'Jeju Myeongjo';
 
 }
 table.type09 td {
     width: 350px;
-    padding: 10px;
-    vertical-align: top;
+    padding: 10px;;
     border-bottom: 1px solid #ccc;
-    background: #f3f6f7;
+    background: #F0F7F8;
     vertical-align: middle;
     font-size: 18px;
     font-family: 'Jeju Myeongjo';

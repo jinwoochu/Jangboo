@@ -45,22 +45,22 @@ html, body{
 }
 
 /* 선택 라디오 박스 */
-form .choice-group{
+.choice-group{
     text-align: center;
 }
 
 /* 라디오 버튼 */
-form input[type="radio"]{
+input[type="radio"]{
     display: none;
 }
 
 /* 체크된 라디오 버튼 */
-form input[type="radio"]:checked +.box {
+input[type="radio"]:checked +.box {
     background-color: rgba(255, 255, 255, 0.7); /* 레이블 배경지정 */
 }
 
 /* 라디오 버튼 공통 클래스 */
-form .box{
+.box{
     border-radius: 3px; /* 테두리 모양지정 */
     border: 1px solid rgba(0, 0, 0, 0.4);
     background-color: rgba(255, 255, 255, 0.2);
@@ -104,6 +104,8 @@ table.type09 tbody th {
     vertical-align: top;
     border-bottom: 1px solid #ccc;
     background: #f3f6f7;
+    font-family: 'Jeju Myeongjo';
+
 }
 table.type09 td {
     width: 350px;
@@ -111,4 +113,7 @@ table.type09 td {
     vertical-align: top;
     border-bottom: 1px solid #ccc;
     background: #f3f6f7;
+    vertical-align: middle;
+    font-size: 18px;
+    font-family: 'Jeju Myeongjo';
 }

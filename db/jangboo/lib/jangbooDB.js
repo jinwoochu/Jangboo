@@ -208,6 +208,47 @@ exports.confirmSearch = function(req, res) {
     });
 }
 
+// withdraw에 잔여금액 반환
+exports.showAvailableBalance = function (req,res) {
+
+    var selectQuery = "select SUM(money) as deposit from jangboo where status='confirm' and kind='deposit';";
+    // var selectQueryParam = ["confirm"];
+    con.query(selectQuery, function(err, rows, fields) {
+        if (err) {
+            response = makeResponse(0, "내부 오류입니다.", {});
+            res.json(response);
+            return;
+        }
+        console.log("입금 내역 : "+rows[0].deposit);
+
+        var selectQuery2 = "select SUM(money) as withdraw from jangboo where status='confirm' and kind='withdraw';";
+
+        con.query(selectQuery2, function(err_2, rows_2, fields_2) {
+            if (err) {
+                response = makeResponse(0, "내부 오류입니다.", {});
+                res.json(response);
+                return;
+            }
+
+            var withdrawBal;
+            var sum_withdraw = rows_2[0].withdraw;
+
+            if(sum_withdraw==null){ //
+                withdrawBal=0;
+            }else{ //  합이 널이 아니면 그 금액을 넣어주어야 된다.
+                withdrawBal= sum_withdraw;
+            }
+            console.log("지출 금액 : "+withdrawBal);
+            console.log("남은 금액 : "+ (rows[0].deposit - withdrawBal));
+            res.render('withdraw',{availableMoney:(rows[0].deposit - withdrawBal)});
+        });
+    });
+
+
+}
+
+
+
 // 리스폰스 만드는 함수
 function makeResponse(status, message, data) {
     var response = {

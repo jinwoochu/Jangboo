@@ -59,7 +59,9 @@ router.get('/lookup',function(req, res, next) {
 
 // 지출 페이지
 router.get('/withdraw',function(req, res, next) {
-    res.render("withdraw");
+    // 잔여금액 렌더링 필요함
+    jangbooDB.showAvailableBalance(req,res);
+
 });
 
 // 승인 내역 페이지 (대기 목록에 있는 지출 목록을 승인해)

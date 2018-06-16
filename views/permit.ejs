@@ -117,16 +117,11 @@
                 else swal("승인 취소!", "", "error");
             })
 
-
-
-
             // 반복문을 이용해서 배열에 값을 담아 사용할 수 도 있다.
             td.each(function (i) {
                 tdArr.push(td.eq(i).text());
             });
         })
-
-
 
         function main(result) {
             if (result.status == 0) {

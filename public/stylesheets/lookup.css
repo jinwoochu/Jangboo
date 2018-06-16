@@ -54,17 +54,6 @@ a{
     text-align: center;
 }
 
-/* 라디오 버튼 */
-input[type="radio"]{
-    display: none;
-}
-
-/* 체크된 라디오 버튼 */
-input[type="radio"]:checked +.box {
-    background-color: rgba(255, 255, 255, 0.7); /* 레이블 배경지정 */
-}
-
-/* 라디오 버튼 공통 클래스 */
 .box{
     border-radius: 3px; /* 테두리 모양지정 */
     border: 1px solid rgba(0, 0, 0, 0.4);
@@ -96,7 +85,7 @@ table.type09 {
 table.type09 thead th {
     padding: 10px;
     font-weight: bold;
-    font-size: 20px;
+    font-size: 25px;
     vertical-align: top;
     color: #369;
     border-bottom: 3px solid #036;
@@ -117,11 +106,14 @@ table.type09 td {
     border-bottom: 1px solid #ccc;
     background: #F0F7F8;
     vertical-align: middle;
-    font-size: 18px;
+    font-size: 20px;
     font-family: 'Jeju Myeongjo';
 }
 
 button{
-    border-radius: 3px;
-    padding: 5px;
+    border-style: none;
+    background-color: white;
+    cursor: pointer;
+    font-size: 18px;
+    font-family: 'Jeju Myeongjo';
 }

@@ -23,33 +23,37 @@
         <div class="content">
             <!-- 제목 -->
             <div class="title">
-                <h1 id="texts"> 결제내역조회 </h1>
+                <h1 id="texts"> 결제 내역 조회 </h1>
             </div>
 
             <div class="container">
-                <!-- 전체, 대기, 완료 선택 라디오 버튼 -->
                 <div class="choice-group">
                     <!-- 전체 -->
-                    <label><a href="/users/lookupAllSearch">
-                            <input type="radio" name="choice" value="all">
+                    <label>
+                        <a href="/users/lookupAllSearch">
                             <div class="all box">
-                                <span> 전체내역 </span>
+                                <span> 전체 내역 </span>
                             </div>
                         </a></label>
 
                     <!-- 대기 -->
                     <label><a href="/users/lookupWaitSearch">
-                            <input type="radio" name="choice" value="wait">
                             <div class="wait box">
-                                <span> 대기내역 </span>
+                                <span> 입금 대기 내역 </span>
                             </div>
                         </a></label>
 
                     <!-- 완료 -->
                     <label><a href="/users/lookupConfirmSearch">
-                            <input type="radio" name="choice" value="complete">
                             <div class="complete box">
-                                <span> 완료내역 </span>
+                                <span> 입금 완료 내역 </span>
+                            </div>
+                        </a></label>
+
+                    <!-- 지출 -->
+                    <label><a href="/users/lookupWithdrawSearch">
+                            <div class="complete box">
+                                <span> 지출 내역 </span>
                             </div>
                         </a></label>
                 </div>

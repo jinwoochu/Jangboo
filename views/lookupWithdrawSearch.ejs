@@ -6,6 +6,15 @@
     <link rel="stylesheet" href="/stylesheets/lookup.css" type="text/css">
     <link rel="stylesheet" href="http://fonts.googleapis.com/earlyaccess/notosanskr.css">
     <link rel="stylesheet" href="http://fonts.googleapis.com/earlyaccess/jejumyeongjo.css">
+
+    <!--sweetalert-->
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+    <!--제이쿼리-->
+    <script
+            src="https://code.jquery.com/jquery-3.3.1.js"
+            integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60="
+            crossorigin="anonymous">
+    </script>
 </head>
 <body>
 <!-- 이미지 삽입 영역 -->
@@ -71,9 +80,10 @@
                         </thead>
                         <tbody>
                         <% for(var i = 0 ; i < searchLen ; i++) { %>
-                            <tr>
+                            <tr class="viewDetail">
                                 <th scope="row"> <%= searchData[i].reg_time %> </th>
                                 <td><%= searchData[i].money %></td>
+                                <td hidden><%= searchData[i].u_num %></td>
                                 <td><%= searchData[i].user_name %></td>
                                 <td><%= searchData[i].status %></td>
                                 <td><%= searchData[i].kind %></td>
@@ -87,4 +97,61 @@
     </div>
 </div>
 </body>
+<script>
+
+    function request_ajax(type, url, data, callback) {
+        $.ajax({
+            url: url,
+            type: type,
+            data: data,
+            dataType: "json",
+            success: callback
+        });
+    }
+
+    $(document).ready(function() {
+
+        $(".viewDetail").click(function() {
+
+            var str = ""
+            var tdArr = new Array();	// 배열 선언
+            var checkBtn = $(this);
+
+            var jang_num = checkBtn.children().eq(2).text();
+            var jsonData = {number:jang_num}
+            request_ajax('POST', "/jangboo/viewDetail", jsonData, main);
+
+
+            // var check = swal({
+            //     title: "승인 하시겠습니까?",
+            //     icon: "warning",
+            //     buttons: true,
+            // }) .then(function(check){ <!-- 동기식 : 확인창을 수행 후 밑을 수행 -->
+            //     if(check) {
+            //
+            //         //  포스트 날리면댐
+            //         // DB u_num 주고 그 새끼 상태값을 wait -> confirm으로 변경
+            //         request_ajax('POST', "/admins/confirmWaitList", jsonData, main);
+            //     }
+            //
+            //     else swal("승인 취소!", "", "error");
+            // })
+
+
+        })
+
+        function main(result) {
+            if (result.status == 0) {
+                alert(result.message);
+            } else {
+                swal(result.message)
+                    .then(function (ok) {
+                        if(ok) window.location.href = "/admins/permit";
+                    })
+            }
+        }
+    });
+
+</script>
+
 </html>

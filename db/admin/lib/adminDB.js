@@ -122,8 +122,6 @@ exports.confirmWaitList = function (req,res) {
 }
 
 
-
-
 // 리스폰스 만드는 함수
 function makeResponse(status, message, data) {
     var response = {

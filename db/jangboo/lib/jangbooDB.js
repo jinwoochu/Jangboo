@@ -148,8 +148,8 @@ exports.waitSearch = function(req, res) {
 // 완료 내역 조회
 exports.confirmSearch = function(req, res) {
 
-    var selectQuery = "SELECT * FROM jangboo WHERE status = ?;";
-    var selectQueryParam = ["confirm"];
+    var selectQuery = "SELECT * FROM jangboo WHERE status = ? AND kind=?;";
+    var selectQueryParam = ["confirm",'deposit'];
     con.query(selectQuery, selectQueryParam, function(err, rows, fields) {
         if (err) {
             response = makeResponse(0, "내부 오류입니다.", {});
@@ -219,11 +219,11 @@ exports.showAvailableBalance = function (req,res) {
 // jangboo, description
 exports.withdraw = function(req, res) {
 
-    var withdrawId = req.signedCookies.id;
+    var withdrawId = req.signedCookies.aid;
     var withdrawMoney = req.body.money;
     var why = req.body.why;
 
-    var selectQuery = "SELECT * FROM users WHERE id= ?;";
+    var selectQuery = "SELECT * FROM admins WHERE id= ?;";
     var selectQueryParams = [withdrawId];
 
     con.query(selectQuery, selectQueryParams, function(err, rows, fields) {
@@ -277,7 +277,7 @@ exports.lookupWithdrawSearch = function(req, res) {
 
     con.query(selectQuery, selectQueryParams, function(err, rows, fields) {
         if (err) {
-            response = makeResponse(0, "해당 쿠키값을 가진 ID가 없습니다.", {});
+            response = makeResponse(0, "쿼리문 오류", {});
             res.json(response);
             return;
         }
@@ -300,7 +300,56 @@ exports.lookupWithdrawSearch = function(req, res) {
 }
 
 
+exports.showMypage = function (req,res) {
 
+
+    var id = req.signedCookies.id;
+
+    var selectQuery = "SELECT user_name FROM users WHERE id=?;";
+    var selectQueryParams = [id];
+
+    con.query(selectQuery, selectQueryParams, function(err, rows, fields) {
+        if (err) {
+            response = makeResponse(0, "해당 쿠키값을 가진 ID가 없습니다.", {});
+            res.json(response);
+            return;
+        }
+
+        var userName = rows[0].user_name;
+        var selectQuery2 = "SELECT * FROM jangboo WHERE user_name=?;";
+        var selectQueryParams2 = [userName];
+
+        con.query(selectQuery2, selectQueryParams2, function(err2, rows2, fields2) {
+            if (err) {
+                response = makeResponse(0, "쿼리문 오류", {});
+                res.json(response);
+                return;
+            }
+
+            for(var i =0; i< rows.length;i++){
+                rows2[i].reg_time = rows2[i].reg_time.toLocaleString();
+                if(parseInt(rows2[i].reg_time.toLocaleString().split("-")[1])<10){ // 달이 10 보다 작으면 0추가
+                    rows2[i].reg_time = rows2[i].reg_time.toLocaleString().replace(rows2[i].reg_time.toLocaleString().split("-")[1], "0"+ rows2[i].reg_time.toLocaleString().split("-")[1])
+                }
+                rows2[i].confirm_time = rows2[i].confirm_time.toLocaleString();
+                if(parseInt(rows2[i].confirm_time.toLocaleString().split("-")[1])<10){ // 달이 10 보다 작으면 0추가
+                    rows2[i].confirm_time = rows2[i].confirm_time.toLocaleString().replace(rows2[i].confirm_time.toLocaleString().split("-")[1], "0"+ rows2[i].confirm_time.toLocaleString().split("-")[1])
+                }
+
+                if(rows2[i].status == "wait") rows2[i].status = "대기";
+                else rows2[i].status = "완료";
+
+                if(rows2[i].kind == "deposit") rows2[i].kind = "입금";
+                else rows2[i].kind = "출금";
+            }
+
+            res.render("mypage",{searchData:rows2, searchLen:rows2.length}); // 장부에 있는 내역 받아야됌.
+
+        });
+    });
+
+
+}
 
 
 

@@ -90,7 +90,7 @@ router.get('/lookupWithdrawSearch',DB.isLogined,function(req, res, next) {
 
 // 마이 페이지
 router.get('/mypage',function(req, res, next) {
-    res.render("mypage");
+    jangbooDB.showMypage(req,res);
 });
 
 // 로그아웃

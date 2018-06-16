@@ -299,6 +299,26 @@ exports.lookupWithdrawSearch = function(req, res) {
     });
 }
 
+// 지출 내역 디테일 보기
+exports.viewDetail = function (req,res) {
+
+
+    var jangNum = req.body.number;
+
+    var selectQuery = "SELECT * FROM withdraw_desc WHERE jangboo_num=?;";
+    var selectQueryParams = [jangNum];
+
+    con.query(selectQuery, selectQueryParams, function(err, rows, fields) {
+        if (err) {
+            response = makeResponse(0, "쿼리문 오류", {});
+            res.json(response);
+            return;
+        }
+        response = makeResponse(1, rows[0].description, {});
+        res.json(response);
+    });
+}
+
 
 exports.showMypage = function (req,res) {
 
@@ -326,15 +346,23 @@ exports.showMypage = function (req,res) {
                 return;
             }
 
-            for(var i =0; i< rows.length;i++){
+            for(var i =0; i< rows2.length;i++){
                 rows2[i].reg_time = rows2[i].reg_time.toLocaleString();
                 if(parseInt(rows2[i].reg_time.toLocaleString().split("-")[1])<10){ // 달이 10 보다 작으면 0추가
                     rows2[i].reg_time = rows2[i].reg_time.toLocaleString().replace(rows2[i].reg_time.toLocaleString().split("-")[1], "0"+ rows2[i].reg_time.toLocaleString().split("-")[1])
                 }
-                rows2[i].confirm_time = rows2[i].confirm_time.toLocaleString();
-                if(parseInt(rows2[i].confirm_time.toLocaleString().split("-")[1])<10){ // 달이 10 보다 작으면 0추가
-                    rows2[i].confirm_time = rows2[i].confirm_time.toLocaleString().replace(rows2[i].confirm_time.toLocaleString().split("-")[1], "0"+ rows2[i].confirm_time.toLocaleString().split("-")[1])
+
+                // 만약 confirm_time이 Null이면 0으로 바꾼다.
+                if(!rows2[i].confirm_time){
+                    rows2[i].confirm_time="-";
                 }
+                else{
+                    rows2[i].confirm_time = rows2[i].confirm_time.toLocaleString();
+                    if(parseInt(rows2[i].confirm_time.toLocaleString().split("-")[1])<10){ // 달이 10 보다 작으면 0추가
+                        rows2[i].confirm_time = rows2[i].confirm_time.toLocaleString().replace(rows2[i].confirm_time.toLocaleString().split("-")[1], "0"+ rows2[i].confirm_time.toLocaleString().split("-")[1])
+                    }
+                }
+
 
                 if(rows2[i].status == "wait") rows2[i].status = "대기";
                 else rows2[i].status = "완료";
@@ -347,9 +375,9 @@ exports.showMypage = function (req,res) {
 
         });
     });
-
-
 }
+
+
 
 
 

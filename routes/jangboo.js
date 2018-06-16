@@ -29,6 +29,11 @@ router.post('/withdraw', function(req, res, next) {
     jangbooDB.withdraw(req,res);
 });
 
+// 출금 내용 보여줄려고 만든거
+router.post('/viewDetail', function(req, res, next) {
+    // jangbooDB.withdraw(req,res);
+    jangbooDB.viewDetail(req,res);
+});
 
 
 

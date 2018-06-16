@@ -73,7 +73,7 @@ exports.login = function (req,res) {
             if (result[0].password === password) {
 
                 // 여기서 쿠키 심어야 할듯
-                // res.cookie('id', id, { signed: true });
+                res.cookie('aid', id, { signed: true });
 
                 response = makeResponse(1, "로그인 성공", {});
                 res.json(response);
@@ -89,8 +89,8 @@ exports.login = function (req,res) {
 
 // 로그인되어있는지 , 쿠키 확인
 exports.isLogined = function(req, res, next) {
-    if (req.signedCookies.id === undefined) {
-        res.redirect('/');
+    if (req.signedCookies.aid === undefined) {
+        res.redirect('/admins/login');
     } else {
         next();
     }

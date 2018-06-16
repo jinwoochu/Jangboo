@@ -104,7 +104,7 @@ exports.confirmWaitList = function (req,res) {
 
     // UPDATE `student` SET name='이진경' WHERE id=1;
 
-    var selectQuery = "UPDATE jangboo SET status = 'confirm' WHERE u_num=?;";
+    var selectQuery = "UPDATE jangboo SET status='confirm', confirm_time=NOW() WHERE u_num=?;";
     var selectQueryParams = [number];
 
     console.log(selectQuery)

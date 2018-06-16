@@ -158,9 +158,9 @@ exports.confirmSearch = function(req, res) {
         }
 
         for(var i =0; i< rows.length;i++){
-            rows[i].reg_time = rows[i].reg_time.toLocaleString();
-            if(parseInt(rows[i].reg_time.toLocaleString().split("-")[1])<10){ // 달이 10 보다 작으면 0추가
-                rows[i].reg_time = rows[i].reg_time.toLocaleString().replace(rows[i].reg_time.toLocaleString().split("-")[1], "0"+ rows[i].reg_time.toLocaleString().split("-")[1])
+            rows[i].reg_time = rows[i].confirm_time.toLocaleString();
+            if(parseInt(rows[i].confirm_time.toLocaleString().split("-")[1])<10){ // 달이 10 보다 작으면 0추가
+                rows[i].confirm_time = rows[i].confirm_time.toLocaleString().replace(rows[i].confirm_time.toLocaleString().split("-")[1], "0"+ rows[i].confirm_time.toLocaleString().split("-")[1])
             }
             if(rows[i].status == "confirm"){
                 rows[i].status = "완료";
@@ -172,38 +172,7 @@ exports.confirmSearch = function(req, res) {
             }
         }
 
-        res.render("lookupAllSearch",{searchData:rows, searchLen:rows.length}); // 장부에 있는 내역 받아야됌.
-    });
-}
-
-// 잔여금액 조회
-exports.confirmSearch = function(req, res) {
-
-    var selectQuery = "SELECT * FROM jangboo WHERE status = ?;";
-    var selectQueryParam = ["confirm"];
-    con.query(selectQuery, selectQueryParam, function(err, rows, fields) {
-        if (err) {
-            response = makeResponse(0, "내부 오류입니다.", {});
-            res.json(response);
-            return;
-        }
-
-        for(var i =0; i< rows.length;i++){
-            rows[i].reg_time = rows[i].reg_time.toLocaleString();
-            if(parseInt(rows[i].reg_time.toLocaleString().split("-")[1])<10){ // 달이 10 보다 작으면 0추가
-                rows[i].reg_time = rows[i].reg_time.toLocaleString().replace(rows[i].reg_time.toLocaleString().split("-")[1], "0"+ rows[i].reg_time.toLocaleString().split("-")[1])
-            }
-            if(rows[i].status == "confirm"){
-                rows[i].status = "완료";
-            }
-            if(rows[i].kind == "deposit"){
-                rows[i].kind = "입금";
-            } else if(rows[i].kind == "withdraw"){
-                rows[i].kind = "출금";
-            }
-        }
-
-        res.render("lookupAllSearch",{searchData:rows, searchLen:rows.length}); // 장부에 있는 내역 받아야됌.
+        res.render("lookupConfirmSearch",{searchData:rows, searchLen:rows.length}); // 장부에 있는 내역 받아야됌.
     });
 }
 

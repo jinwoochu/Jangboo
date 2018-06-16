@@ -24,5 +24,12 @@ router.post('/', function(req, res, next) {
     jangbooDB.deposit(req,res);
 });
 
+// withdraw(출금)하면 -> 장부에 기록한다.
+router.post('/withdraw', function(req, res, next) {
+    jangbooDB.withdraw(req,res);
+});
+
+
+
 
 module.exports = router;

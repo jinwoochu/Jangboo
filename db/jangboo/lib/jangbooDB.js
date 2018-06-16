@@ -47,7 +47,6 @@ exports.deposit = function(req, res) {
     });
 }
 
-
 // 전체 내역 조회
 exports.allSearch = function(req, res) {
     console.log("넘어온다.");
@@ -159,9 +158,9 @@ exports.confirmSearch = function(req, res) {
         }
 
         for(var i =0; i< rows.length;i++){
-            rows[i].reg_time = rows[i].reg_time.toLocaleString();
-            if(parseInt(rows[i].reg_time.toLocaleString().split("-")[1])<10){ // 달이 10 보다 작으면 0추가
-                rows[i].reg_time = rows[i].reg_time.toLocaleString().replace(rows[i].reg_time.toLocaleString().split("-")[1], "0"+ rows[i].reg_time.toLocaleString().split("-")[1])
+            rows[i].reg_time = rows[i].confirm_time.toLocaleString();
+            if(parseInt(rows[i].confirm_time.toLocaleString().split("-")[1])<10){ // 달이 10 보다 작으면 0추가
+                rows[i].confirm_time = rows[i].confirm_time.toLocaleString().replace(rows[i].confirm_time.toLocaleString().split("-")[1], "0"+ rows[i].confirm_time.toLocaleString().split("-")[1])
             }
             if(rows[i].status == "confirm"){
                 rows[i].status = "완료";
@@ -173,38 +172,7 @@ exports.confirmSearch = function(req, res) {
             }
         }
 
-        res.render("lookupAllSearch",{searchData:rows, searchLen:rows.length}); // 장부에 있는 내역 받아야됌.
-    });
-}
-
-// 잔여금액 조회
-exports.confirmSearch = function(req, res) {
-
-    var selectQuery = "SELECT * FROM jangboo WHERE status = ?;";
-    var selectQueryParam = ["confirm"];
-    con.query(selectQuery, selectQueryParam, function(err, rows, fields) {
-        if (err) {
-            response = makeResponse(0, "내부 오류입니다.", {});
-            res.json(response);
-            return;
-        }
-
-        for(var i =0; i< rows.length;i++){
-            rows[i].reg_time = rows[i].reg_time.toLocaleString();
-            if(parseInt(rows[i].reg_time.toLocaleString().split("-")[1])<10){ // 달이 10 보다 작으면 0추가
-                rows[i].reg_time = rows[i].reg_time.toLocaleString().replace(rows[i].reg_time.toLocaleString().split("-")[1], "0"+ rows[i].reg_time.toLocaleString().split("-")[1])
-            }
-            if(rows[i].status == "confirm"){
-                rows[i].status = "완료";
-            }
-            if(rows[i].kind == "deposit"){
-                rows[i].kind = "입금";
-            } else if(rows[i].kind == "withdraw"){
-                rows[i].kind = "출금";
-            }
-        }
-
-        res.render("lookupAllSearch",{searchData:rows, searchLen:rows.length}); // 장부에 있는 내역 받아야됌.
+        res.render("lookupConfirmSearch",{searchData:rows, searchLen:rows.length}); // 장부에 있는 내역 받아야됌.
     });
 }
 
@@ -246,6 +214,93 @@ exports.showAvailableBalance = function (req,res) {
 
 
 }
+
+// 지출하기 == 2개의 테이블을 변경해야한다.
+// jangboo, description
+exports.withdraw = function(req, res) {
+
+    var withdrawId = req.signedCookies.id;
+    var withdrawMoney = req.body.money;
+    var why = req.body.why;
+
+    var selectQuery = "SELECT * FROM users WHERE id= ?;";
+    var selectQueryParams = [withdrawId];
+
+    con.query(selectQuery, selectQueryParams, function(err, rows, fields) {
+        if (err) {
+            response = makeResponse(0, "해당 쿠키값을 가진 ID가 없습니다.", {});
+            res.json(response);
+            return;
+        }
+        console.log(rows[0].user_name);
+        var userName = rows[0].user_name;
+
+        var insertQuery = "INSERT INTO `jangboo` (money, user_name, status, kind) VALUES (?,?,?,?)";
+        var insertQueryParams = [withdrawMoney, userName, "confirm", "withdraw"];
+
+        con.query(insertQuery, insertQueryParams, function(err, result, field) {
+            if (err) {
+                response = makeResponse(0, "데이터 삽입 오류", {});
+                res.json(response);
+                return;
+            } else {
+
+                var jangNum = result.insertId;
+                var insertQuery2 = "INSERT INTO `withdraw_desc` (jangboo_num, description) VALUES (?,?)";
+                var insertQueryParams2 = [jangNum, why];
+
+                con.query(insertQuery2, insertQueryParams2, function(err2, result2, field2) {
+                    if (err2) {
+                        response = makeResponse(0, "데이터 삽입 오류", {});
+                        res.json(response);
+                        return;
+                    } else {
+                        response = makeResponse(1, "모든 로직이 정상처리 되었습니다.", {});
+                        res.json(response);
+                    }
+                });
+            }
+        });
+
+
+
+
+
+    });
+}
+
+// 지출내역 조회
+exports.lookupWithdrawSearch = function(req, res) {
+
+    var selectQuery = "SELECT * FROM jangboo WHERE kind= ?;";
+    var selectQueryParams = ['withdraw'];
+
+    con.query(selectQuery, selectQueryParams, function(err, rows, fields) {
+        if (err) {
+            response = makeResponse(0, "해당 쿠키값을 가진 ID가 없습니다.", {});
+            res.json(response);
+            return;
+        }
+
+        for(var i =0; i< rows.length;i++){
+            rows[i].reg_time = rows[i].reg_time.toLocaleString();
+            if(parseInt(rows[i].reg_time.toLocaleString().split("-")[1])<10){ // 달이 10 보다 작으면 0추가
+                rows[i].reg_time = rows[i].reg_time.toLocaleString().replace(rows[i].reg_time.toLocaleString().split("-")[1], "0"+ rows[i].reg_time.toLocaleString().split("-")[1])
+            }
+            if(rows[i].status == "wait") rows[i].status = "대기";
+            else rows[i].status = "완료";
+
+            if(rows[i].kind == "deposit") rows[i].kind = "입금";
+            else rows[i].kind = "출금";
+        }
+
+        res.render("lookupWithdrawSearch",{searchData:rows, searchLen:rows.length}); // 장부에 있는 내역 받아야됌.
+
+    });
+}
+
+
+
 
 
 

@@ -14,12 +14,11 @@ var jangbooDB = require('../db/jangboo');
 /* GET users listing. */
 router.get('/', function(req, res, next) {
 
-    res.send("admin Page!!");
-    // if (req.signedCookies.id === undefined) {
-    //     res.redirect('login'); // 로그인 안되있는경우
-    // } else {
-    //     res.redirect('home'); // 로그인 되있는경우
-    // }
+    if (req.signedCookies.aid === undefined) {
+        res.redirect('login'); // 로그인 안되있는경우
+    } else {
+        res.redirect('withdraw'); // 로그인 되있는경우
+    }
 });
 
 // 로그인 페이지
@@ -52,25 +51,20 @@ router.post("/register",function (req,res,next) {
     adminDB.register(req,res);
 });
 
-// 조회 페이지
-router.get('/lookup',function(req, res, next) {
-    res.render("lookup");
-});
-
 // 지출 페이지
-router.get('/withdraw',function(req, res, next) {
+router.get('/withdraw',adminDB.isLogined,function(req, res, next) {
     // 잔여금액 렌더링 필요함
     jangbooDB.showAvailableBalance(req,res);
 
 });
 
 // 승인 내역 페이지 (대기 목록에 있는 지출 목록을 승인해)
-router.get('/permit',function(req, res, next) {
+router.get('/permit',adminDB.isLogined,function(req, res, next) {
     jangbooDB.waitSearchAdmin(req,res);
 });
 
 // 입금 대기목록 승인
-router.post("/confirmWaitList",function (req,res,next) {
+router.post("/confirmWaitList",adminDB.isLogined,function (req,res,next) {
 
     adminDB.confirmWaitList(req,res);
 });
@@ -78,12 +72,20 @@ router.post("/confirmWaitList",function (req,res,next) {
 
 // 로그아웃
 router.get('/logout', function(req, res, next) {
-    res.clearCookie("id");
+    res.clearCookie("aid");
     res.redirect('/admins/login');
     // 민경환 ㅡㅡ
 });
 
 
+// 로그인되어있는지 , 쿠키 확인
+exports.isLogined = function(req, res, next) {
+    if (req.signedCookies.aid === undefined) {
+        res.redirect('/admins/login');
+    } else {
+        next();
+    }
+}
 
 
 module.exports = router;

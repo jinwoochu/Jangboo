@@ -80,6 +80,12 @@ router.get('/lookupConfirmSearch',DB.isLogined,function(req, res, next) {
     jangbooDB.confirmSearch(req,res);
 });
 
+// 지출내역 조회
+router.get('/lookupWithdrawSearch',DB.isLogined,function(req, res, next) {
+    jangbooDB.lookupWithdrawSearch(req,res);
+});
+
+
 
 
 // 마이 페이지

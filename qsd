@@ -1,0 +1,687 @@
+[33mcommit fc03ecd6984521f0d1ea3f50af21577adc168977[m[33m ([m[1;36mHEAD -> [m[1;32mback-end[m[33m)[m
+Author: jinwoochu <cjw0672@naver.com>
+Date:   Sat Jun 16 20:29:20 2018 +0900
+
+    update confirm time
+
+[33mcommit b895ab88f3e4e0367bb2e209555ed5a328b7e3d1[m[33m ([m[1;31morigin/back-end[m[33m)[m
+Author: jinwoochu <cjw0672@naver.com>
+Date:   Sat Jun 16 19:57:23 2018 +0900
+
+    update admin cookie function && WithdrawSearch
+
+[33mcommit d9f91fef9878d238b919aef45b0094e577791248[m[33m ([m[1;31morigin/master[m[33m)[m
+Merge: 66b7d83 3e73326
+Author: jinwooChu <cjw0672@naver.com>
+Date:   Sat Jun 16 18:07:35 2018 +0900
+
+    Merge pull request #42 from ber01/master
+    
+    Update css
+
+[33mcommit 3e7332693a8b0c0430ebfd8f39b4b0058b11fe90[m
+Author: ber01 <ber01@naver.com>
+Date:   Sat Jun 16 18:06:32 2018 +0900
+
+    Update css
+
+[33mcommit 66b7d83d3ff604d9fc922862bcdd4ed37665d517[m
+Merge: a0a2718 e98ba5f
+Author: jinwooChu <cjw0672@naver.com>
+Date:   Sat Jun 16 18:00:57 2018 +0900
+
+    Merge pull request #41 from jinwoochu/back-end
+    
+    update available money
+
+[33mcommit e98ba5ffb09b15b3e7145c2b20d6296a85cf275b[m
+Author: jinwoochu <cjw0672@naver.com>
+Date:   Sat Jun 16 18:00:05 2018 +0900
+
+    update available money
+
+[33mcommit a0a27181afcd87b8981b30490b9333f1b5d6637a[m
+Merge: df6ee8e 9459e11
+Author: jinwooChu <cjw0672@naver.com>
+Date:   Fri Jun 15 23:32:39 2018 +0900
+
+    Merge pull request #40 from jinwoochu/back-end
+    
+    민경환 ㅡㅡ
+
+[33mcommit 9459e11bc9d0a3ad06df182ac3d83850b8bc900b[m
+Author: jinwoochu <cjw0672@naver.com>
+Date:   Fri Jun 15 23:31:58 2018 +0900
+
+    민경환 ㅡㅡ
+
+[33mcommit df6ee8e4969629976b780af373096381c014258d[m
+Merge: d62e820 1fc08a9
+Author: jinwooChu <cjw0672@naver.com>
+Date:   Fri Jun 15 23:21:03 2018 +0900
+
+    Merge pull request #39 from jinwoochu/back-end
+    
+    update admin's confrim function
+
+[33mcommit 1fc08a93f69f070efabc4be6f27f5036fa72749b[m
+Author: jinwoochu <cjw0672@naver.com>
+Date:   Fri Jun 15 23:18:38 2018 +0900
+
+    update admin's confrim function
+
+[33mcommit d62e820f05cf4a0c8758c2290f730d2ec193e233[m
+Merge: 5e2bf5b fcc6fbb
+Author: jinwooChu <cjw0672@naver.com>
+Date:   Fri Jun 15 22:35:45 2018 +0900
+
+    Merge pull request #38 from ber01/master
+    
+    update permit page
+
+[33mcommit fcc6fbb8cd84aed9c48293f973bbc7ba38bbd452[m
+Author: ber01 <ber01@naver.com>
+Date:   Fri Jun 15 22:34:24 2018 +0900
+
+    update permit page & withdraw page
+
+[33mcommit 730aa13c81ea7e4c07239105b0cabbeb502bf464[m
+Author: ber01 <ber01@naver.com>
+Date:   Fri Jun 15 22:22:29 2018 +0900
+
+    update permit page
+
+[33mcommit 5e2bf5bb0e76e841de9ec6c85d2633bdf025abb0[m
+Merge: 2d40fac 684d5df
+Author: jinwooChu <cjw0672@naver.com>
+Date:   Fri Jun 15 22:21:33 2018 +0900
+
+    Merge pull request #37 from jinwoochu/back-end
+    
+    update lookupWaitSearchAdmin
+
+[33mcommit 684d5dfae97afba6ccf223019e763d2812174d7b[m
+Author: jinwoochu <cjw0672@naver.com>
+Date:   Fri Jun 15 22:20:43 2018 +0900
+
+    update lookupWaitSearchAdmin
+
+[33mcommit 2d40fac23eed1a887bb374c527defb19ff1aa7fa[m
+Merge: 1665ea2 2a4bf74
+Author: jinwooChu <cjw0672@naver.com>
+Date:   Fri Jun 15 17:10:23 2018 +0900
+
+    Merge pull request #36 from ber01/master
+    
+    update lookup html
+
+[33mcommit 2a4bf7444226482e83963ae1e9661034adedf5af[m
+Author: ber01 <ber01@naver.com>
+Date:   Fri Jun 15 17:09:30 2018 +0900
+
+    update lookup html
+
+[33mcommit 1665ea24b07e7f56780179a20e8dc743cef93469[m
+Merge: 661f7a8 148920c
+Author: jinwooChu <cjw0672@naver.com>
+Date:   Fri Jun 15 17:05:36 2018 +0900
+
+    Merge pull request #35 from jinwoochu/back-end
+    
+    update lookup routing && DB data
+
+[33mcommit 148920ccb4247a1d30a4476e6c8525de2c72f876[m
+Author: jinwoochu <cjw0672@naver.com>
+Date:   Fri Jun 15 17:04:55 2018 +0900
+
+    update lookup routing && DB data
+
+[33mcommit 661f7a82ac732adff4bcc341baa31dbcdf802f54[m
+Merge: 646fe79 5cd8827
+Author: jinwooChu <cjw0672@naver.com>
+Date:   Fri Jun 15 17:01:08 2018 +0900
+
+    Merge pull request #34 from ber01/master
+    
+    Update lookup page
+
+[33mcommit 5cd88276c89b354ce020b487d17826077e9bed0a[m
+Author: ber01 <ber01@naver.com>
+Date:   Fri Jun 15 16:58:58 2018 +0900
+
+    Update lookup page
+    
+    main, all, wait, confirm
+
+[33mcommit 646fe79c6ca8b534b58e6e02bc46878fe1c2e00d[m
+Merge: eec5b8e 4b914f2
+Author: jinwooChu <cjw0672@naver.com>
+Date:   Fri Jun 15 16:47:29 2018 +0900
+
+    Merge pull request #33 from ber01/master
+    
+    Create lookup Page & table control
+
+[33mcommit 4b914f23880b11d02c0bcfb7dcacdcfbb6c9fa82[m
+Author: ber01 <ber01@naver.com>
+Date:   Fri Jun 15 16:46:16 2018 +0900
+
+    Create lookup Page & table control
+
+[33mcommit eec5b8ead7fb3bb0e6d90070d31785d6fc6d4bfb[m
+Merge: aac4222 5bbf349
+Author: jinwooChu <cjw0672@naver.com>
+Date:   Thu Jun 14 23:01:05 2018 +0900
+
+    Merge pull request #32 from jinwoochu/back-end
+    
+    update date to html
+
+[33mcommit 5bbf3495956cc7a023b600278a5c3ecff6c55f9a[m
+Author: jinwoochu <cjw0672@naver.com>
+Date:   Thu Jun 14 23:00:12 2018 +0900
+
+    update date to html
+
+[33mcommit aac4222299f24cc0f39d231503f689f1db628f0f[m
+Merge: e554ec2 d953491
+Author: jinwooChu <cjw0672@naver.com>
+Date:   Thu Jun 14 22:42:50 2018 +0900
+
+    Merge pull request #31 from ber01/master
+    
+    Update lookup
+
+[33mcommit d953491326c6d7b8654a65bf51f8d0bb6576ae6a[m
+Author: ber01 <ber01@naver.com>
+Date:   Thu Jun 14 22:41:51 2018 +0900
+
+    Update lookup
+
+[33mcommit e554ec2023c0899ab6d294a6fa892096b53a37ba[m
+Merge: 3377549 5ce1cd4
+Author: jinwooChu <cjw0672@naver.com>
+Date:   Thu Jun 14 22:12:40 2018 +0900
+
+    Merge pull request #30 from jinwoochu/back-end
+    
+    send lookup data back-end to front-end
+
+[33mcommit 5ce1cd415475e1ee4145215eeae9c0c59e509bcc[m
+Author: jinwoochu <cjw0672@naver.com>
+Date:   Thu Jun 14 22:11:43 2018 +0900
+
+    send lookup data back-end to front-end
+
+[33mcommit 33775498b094376e3fee7e39d50f519ddd7a93c3[m
+Merge: b38ec9c c95c588
+Author: jinwooChu <cjw0672@naver.com>
+Date:   Thu Jun 14 21:49:28 2018 +0900
+
+    Merge pull request #29 from jinwoochu/back-end
+    
+    update admins code(hard coding Date)
+
+[33mcommit c95c588dc209da0b988a0cd6d3539c2a9a9edd6a[m
+Author: jinwoochu <cjw0672@naver.com>
+Date:   Thu Jun 14 21:48:44 2018 +0900
+
+    update admins code(hard coding Date)
+
+[33mcommit b38ec9c3bc01dcc90e6224348d6a71cf92839311[m
+Merge: 456185e 1c71bca
+Author: jinwooChu <cjw0672@naver.com>
+Date:   Thu Jun 14 21:40:44 2018 +0900
+
+    Merge pull request #28 from jinwoochu/back-end
+    
+    update jangbooDB query(delete hard coding)
+
+[33mcommit 1c71bcab739bf54def37c46f20dbd081211a14c2[m
+Author: jinwoochu <cjw0672@naver.com>
+Date:   Thu Jun 14 21:38:59 2018 +0900
+
+    update jangbooDB query(delete hard coding)
+
+[33mcommit 456185e2a7087c50741f96e6779bc40f808523a4[m
+Merge: c6e4f44 f4c0fec
+Author: jinwooChu <cjw0672@naver.com>
+Date:   Thu Jun 14 21:06:55 2018 +0900
+
+    Merge pull request #27 from ber01/master
+    
+    Create page LookUp
+
+[33mcommit f4c0fec5c110d326845aa8599aaba4d12fc74d8c[m
+Author: ber01 <ber01@naver.com>
+Date:   Thu Jun 14 21:02:42 2018 +0900
+
+    Create page LookUp
+
+[33mcommit c6e4f4448b2b57d140aaefb785c8a6c846c6b707[m
+Merge: 974732c 0195db7
+Author: jinwooChu <cjw0672@naver.com>
+Date:   Thu Jun 14 21:01:35 2018 +0900
+
+    Merge pull request #26 from jinwoochu/back-end
+    
+    update register paging routing
+
+[33mcommit 0195db7a78f1f8bf826bdd8629ab24ec20cd1609[m
+Author: jinwoochu <cjw0672@naver.com>
+Date:   Thu Jun 14 21:00:28 2018 +0900
+
+    update register paging routing
+
+[33mcommit 974732c4a0d818978c4626e07e8ead7bf830990f[m
+Merge: 268044a b32fff8
+Author: jinwooChu <cjw0672@naver.com>
+Date:   Mon Jun 11 02:08:26 2018 +0900
+
+    Merge pull request #25 from jinwoochu/back-end
+    
+    update adminsDB && admin page&function
+
+[33mcommit b32fff8cff95d0fe9993274e37f169bb02314c08[m
+Author: jinwoochu <cjw0672@naver.com>
+Date:   Mon Jun 11 02:06:59 2018 +0900
+
+    update adminsDB && admin page&function
+
+[33mcommit 268044acd1d099d82bfa7432906aebf67030ca2f[m
+Merge: ede3be7 b46d3c3
+Author: jinwooChu <cjw0672@naver.com>
+Date:   Mon Jun 11 01:27:50 2018 +0900
+
+    Merge pull request #24 from ber01/front
+    
+    Update admin page & mypage & a little css etc
+
+[33mcommit b46d3c3d579358c25251de0cda690b745bafacd3[m
+Author: ber01 <ber01@naver.com>
+Date:   Mon Jun 11 01:26:24 2018 +0900
+
+    Update admin page & mypage & a little css etc
+
+[33mcommit ede3be7f6da506c6d296951a98c5832c8bd9f762[m
+Merge: f0f1f61 d2724ed
+Author: jinwooChu <cjw0672@naver.com>
+Date:   Mon Jun 11 00:38:32 2018 +0900
+
+    Merge pull request #23 from jinwoochu/back-end
+    
+    로그인 안되어 있으면 아무 페이지도 못 들어가게 만듬(회원가입이랑 로그인은 가능)
+
+[33mcommit d2724ed3b96ccfb02bca61be7947fb70abf13bb6[m
+Author: jinwoochu <cjw0672@naver.com>
+Date:   Mon Jun 11 00:37:55 2018 +0900
+
+    로그인 안되어 있으면 아무 페이지도 못 들어가게 만듬(회원가입이랑 로그인은 가능)
+
+[33mcommit f0f1f61f3b0fee08e85a7ac10468113af94ea24f[m
+Merge: b873f6b b3bb201
+Author: jinwooChu <cjw0672@naver.com>
+Date:   Mon Jun 11 00:28:53 2018 +0900
+
+    Merge pull request #22 from jinwoochu/back-end
+    
+    update login cookie && logout function
+
+[33mcommit b3bb201b17ed856ac77f0b93ee43282405b06e85[m
+Author: jinwoochu <cjw0672@naver.com>
+Date:   Mon Jun 11 00:27:55 2018 +0900
+
+    update login cookie && logout function
+
+[33mcommit b873f6bdcab78ad7dcdfd4bb0f40e2443957d00b[m
+Merge: c20924c 10dbd9f
+Author: jinwooChu <cjw0672@naver.com>
+Date:   Mon Jun 11 00:03:14 2018 +0900
+
+    Merge pull request #21 from ber01/front
+    
+    Update Many View
+
+[33mcommit 10dbd9fdd99073220209af287f56c138ebba11e6[m
+Author: ber01 <ber01@naver.com>
+Date:   Mon Jun 11 00:01:08 2018 +0900
+
+    Update Many View
+    
+    login, register, home, deposit, lookup
+
+[33mcommit c20924cac387c363c2d94cdbd0105fea9e96f47b[m
+Merge: 0696335 decdfb1
+Author: jinwooChu <cjw0672@naver.com>
+Date:   Sun Jun 10 22:56:21 2018 +0900
+
+    Merge pull request #20 from jinwoochu/back-end
+    
+    delete depositDB && add jangbooDB
+
+[33mcommit decdfb1602f6af3275aed2444f84981acfb99bab[m
+Author: jinwoochu <cjw0672@naver.com>
+Date:   Sun Jun 10 22:53:42 2018 +0900
+
+    delete depositDB && add jangbooDB
+
+[33mcommit 069633527ca4e9ca87ae56992a0d981b5dfb07b9[m
+Merge: ab01346 9857c6f
+Author: jinwooChu <cjw0672@naver.com>
+Date:   Wed Jun 6 17:44:26 2018 +0900
+
+    Merge pull request #19 from jinwoochu/back-end
+    
+    update userLogin's swal && ajax
+
+[33mcommit 9857c6f67b838f5d6f0969a5f2b098f3184d316b[m
+Author: jinwoochu <cjw0672@naver.com>
+Date:   Wed Jun 6 17:42:50 2018 +0900
+
+    update userLogin's swal && ajax
+
+[33mcommit ab013461fe1f06042d775cada72507f79f1cc2f7[m
+Merge: 9be6e44 6ebe16e
+Author: jinwooChu <cjw0672@naver.com>
+Date:   Wed Jun 6 17:18:27 2018 +0900
+
+    Merge pull request #18 from ber01/front
+    
+    Update Home view
+
+[33mcommit 6ebe16ef9ba82ace72119c5a562327a22becf947[m
+Author: ber01 <ber01@naver.com>
+Date:   Wed Jun 6 17:15:16 2018 +0900
+
+    Update Home view
+
+[33mcommit 9be6e440e410d86007e94bce958797a7b1b2897b[m
+Merge: e91300d 91605d8
+Author: jinwooChu <cjw0672@naver.com>
+Date:   Wed Jun 6 17:13:33 2018 +0900
+
+    Merge pull request #17 from jinwoochu/back-end
+    
+    Back end
+
+[33mcommit 91605d84e4080a87516e4f8e7da9b08562119897[m
+Author: jinwoochu <cjw0672@naver.com>
+Date:   Wed Jun 6 17:12:12 2018 +0900
+
+    update post deposit data && add deposits DB RETRY
+
+[33mcommit 548dac6198dd9c343113dbbe90bf126db25f45a1[m
+Author: jinwoochu <cjw0672@naver.com>
+Date:   Wed Jun 6 17:03:30 2018 +0900
+
+    update post deposit data && add deposits DB
+
+[33mcommit e91300ddda34d7311ec44f5a2b159e3e14bb735e[m
+Merge: ccfabb0 e98b76e
+Author: jinwooChu <cjw0672@naver.com>
+Date:   Wed Jun 6 16:02:30 2018 +0900
+
+    Merge pull request #16 from ber01/front
+    
+    Update Deposit Menubar
+
+[33mcommit e98b76e07b52b6cc6929b42e5284fb7506d63853[m
+Author: ber01 <ber01@naver.com>
+Date:   Wed Jun 6 16:01:41 2018 +0900
+
+    Update Deposit Menubar
+
+[33mcommit ccfabb056d319ad91b2a6774609c5e736ba20ca1[m
+Merge: cc57913 381c84e
+Author: jinwooChu <cjw0672@naver.com>
+Date:   Tue Jun 5 00:40:46 2018 +0900
+
+    Merge pull request #15 from ber01/front
+    
+    Create beautiful deposit alert
+
+[33mcommit 381c84e2e461e7f996f537a8d82f423486ee5eab[m
+Author: ber01 <ber01@naver.com>
+Date:   Tue Jun 5 00:38:17 2018 +0900
+
+    Create beautiful deposit alert
+
+[33mcommit cc57913899b1fed39de95be5ac1a079db8163960[m
+Merge: 6e23b7f e29f87d
+Author: jinwooChu <cjw0672@naver.com>
+Date:   Tue Jun 5 00:03:17 2018 +0900
+
+    Merge pull request #14 from jinwoochu/back-end
+    
+    install sweetalert
+
+[33mcommit e29f87dbd85510cf9b0833f696831efefbbded75[m
+Author: jinwoochu <cjw0672@naver.com>
+Date:   Tue Jun 5 00:02:00 2018 +0900
+
+    install sweetalert
+
+[33mcommit 6e23b7f54302441f486fcf50585602755c8b1d03[m
+Merge: 6cc1307 81c55f9
+Author: jinwooChu <cjw0672@naver.com>
+Date:   Mon Jun 4 23:56:10 2018 +0900
+
+    Merge pull request #13 from ber01/front
+    
+    Update deposit JS
+
+[33mcommit 81c55f9e1a6713a6cc54b37d9e67203b38722e28[m
+Author: ber01 <ber01@naver.com>
+Date:   Mon Jun 4 23:54:20 2018 +0900
+
+    Update deposit JS
+
+[33mcommit 6cc13079ead2a2884704d58d2bba06d56a479296[m
+Merge: 282566d 271efe9
+Author: jinwooChu <cjw0672@naver.com>
+Date:   Mon Jun 4 18:32:08 2018 +0900
+
+    Merge pull request #12 from jinwoochu/back-end
+    
+    add jangboo.ejs && add jangboo.css
+
+[33mcommit 271efe9b17aef027cc5784f98f5e573947e1de9e[m
+Author: jinwoochu <cjw0672@naver.com>
+Date:   Mon Jun 4 18:29:49 2018 +0900
+
+    add jangboo.ejs && add jangboo.css
+
+[33mcommit 282566dd4ec72b51eb79a0b8bc1198b05c7e80b5[m
+Merge: 46f7363 47d9563
+Author: jinwooChu <cjw0672@naver.com>
+Date:   Mon Jun 4 13:26:03 2018 +0900
+
+    Merge pull request #11 from ber01/front
+    
+    Update Deposit.ejs & css
+
+[33mcommit 47d956354b5470577879902c818c85c264e7b85d[m
+Author: ber01 <ber01@naver.com>
+Date:   Mon Jun 4 13:23:09 2018 +0900
+
+    temp update ejs
+
+[33mcommit b2cbd8f3b965f98c0bfc5359feaef22e9fff5797[m
+Author: ber01 <ber01@naver.com>
+Date:   Sat Jun 2 01:41:25 2018 +0900
+
+    Update temp deposit view
+
+[33mcommit b26014784653eb69348b31e00b48c51c29b2a0e5[m
+Author: ber01 <ber01@naver.com>
+Date:   Sat May 26 20:27:00 2018 +0900
+
+    temp html, css
+
+[33mcommit 33d4935594ae79e24eecceea6c70f3af02489d78[m
+Merge: 4f7b198 ab123c1
+Author: ber01 <ber01@naver.com>
+Date:   Sat May 26 18:24:36 2018 +0900
+
+    Merge pull request #1 from ber01/front
+    
+    Front
+
+[33mcommit ab123c195eb975e47220d3ee000cc4700be7b59c[m
+Author: ber01 <ber01@naver.com>
+Date:   Sat May 26 18:16:43 2018 +0900
+
+    temp
+
+[33mcommit 46f736393970a593d59c87d288c849487ecc1ff3[m
+Merge: eb80eb1 ae10899
+Author: jinwooChu <cjw0672@naver.com>
+Date:   Sun May 20 19:23:56 2018 +0900
+
+    Merge pull request #9 from jinwoochu/back-end
+    
+    update register && login Function
+
+[33mcommit ae108997087d2c08e42cb781cecf99fdd4f8b7a9[m
+Author: jinwoochu <cjw0672@naver.com>
+Date:   Sun May 20 19:22:11 2018 +0900
+
+    update register && login Function
+
+[33mcommit eb80eb134aed27ba1e2c9ffadb0343053d6d468f[m
+Merge: 987beeb 4570b20
+Author: jinwooChu <cjw0672@naver.com>
+Date:   Fri May 18 15:34:22 2018 +0900
+
+    Merge pull request #8 from ber01/front
+    
+    Create Radio Button
+
+[33mcommit 4570b2071403d30c750ccd7c09f9c63b546d0985[m
+Author: ber01 <ber01@naver.com>
+Date:   Fri May 18 15:21:13 2018 +0900
+
+    Create Radio Button
+    
+    choice gender(man, woman)
+
+[33mcommit 047d86f9f65fabd97a6b4901b674ff0dee253682[m
+Author: ber01 <ber01@naver.com>
+Date:   Sat May 12 14:44:46 2018 +0900
+
+    restart
+
+[33mcommit 987beebabab94e6b979d5e90ff849005d915d188[m
+Merge: 853bcae cbff5c7
+Author: jinwooChu <cjw0672@naver.com>
+Date:   Sat May 12 14:34:42 2018 +0900
+
+    Merge pull request #6 from jinwoochu/back-end
+    
+    restart project
+
+[33mcommit cbff5c721efe9a4d796b693d4e5c5feb8342f1ff[m
+Author: jinwoochu <cjw0672@naver.com>
+Date:   Sat May 12 14:32:15 2018 +0900
+
+    restart project
+    update ejs's parameter
+    update db Module
+
+[33mcommit 853bcae8a0fba6d84d8a6182123869e52675a32f[m
+Merge: 944dcc4 9faf2bb
+Author: jinwooChu <cjw0672@naver.com>
+Date:   Tue May 1 02:01:33 2018 +0900
+
+    Merge pull request #5 from jinwoochu/back-end
+    
+    edit userRegister.ejs 👍
+
+[33mcommit 9faf2bb4b3df19588324d6c0fcd573c6c6eb58bd[m
+Author: jinwoochu <cjw0672@naver.com>
+Date:   Tue May 1 01:58:39 2018 +0900
+
+    edit userRegister.ejs :
+    add sex radio button,
+    add name properties
+
+[33mcommit 944dcc48a5f24c9590381238a262a98bd02d8f74[m[33m ([m[1;32mmaster[m[33m)[m
+Merge: 9b55fff 4f7b198
+Author: jinwooChu <cjw0672@naver.com>
+Date:   Tue May 1 01:19:53 2018 +0900
+
+    Merge pull request #4 from ber01/master
+    
+    Update
+
+[33mcommit 4f7b198a94b495e05382ba930b5c3513ef4dd324[m
+Author: ber01 <ber01@naver.com>
+Date:   Tue May 1 01:18:00 2018 +0900
+
+    1. modified users.js : css path routing
+    2. create register.css
+    3. modified userRegister
+
+[33mcommit 9b55fff784e385ed760b10f44f83e1eca2c9014a[m
+Merge: 3fc7895 c2f36c8
+Author: jinwooChu <cjw0672@naver.com>
+Date:   Mon Apr 30 03:38:43 2018 +0900
+
+    Merge pull request #3 from ber01/master
+    
+    ok good boy
+
+[33mcommit c2f36c8d947d117fa49513875daed44b8c70fe3d[m
+Author: ber01 <ber01@naver.com>
+Date:   Mon Apr 30 03:35:33 2018 +0900
+
+    Update Sign Up html, css
+    PATH="/usr/local/Cellar/node/7.10.0/bin
+
+[33mcommit 3fc7895963db911aa123411c3a79116ae307a2f7[m
+Author: jinwoochu <cjw0672@naver.com>
+Date:   Mon Apr 30 02:40:41 2018 +0900
+
+    update userLogin form tag && add user/login(post) && add Sign up(get)
+
+[33mcommit d55f1be014a4a6a46c89618be20659f124e1eb7b[m
+Merge: bfb2cdc 5704b1d
+Author: jinwooChu <cjw0672@naver.com>
+Date:   Mon Apr 30 01:15:54 2018 +0900
+
+    Merge pull request #2 from ber01/front
+    
+    민경환 잘했어 ^^
+
+[33mcommit 5704b1d4732099d6c279603a36366aae1627b011[m
+Author: ber01 <ber01@naver.com>
+Date:   Mon Apr 30 01:11:35 2018 +0900
+
+    update userLogin
+
+[33mcommit bfb2cdc0e8595ab63cc473b7cbfdca7bc4e78f88[m
+Merge: 7e425c4 5145545
+Author: jinwooChu <cjw0672@naver.com>
+Date:   Mon Apr 30 00:54:56 2018 +0900
+
+    Merge pull request #1 from jinwoochu/back-end
+    
+    add userRegisterPage
+
+[33mcommit 5145545fa8ca6fabcd6aefc58a6a0f6003bbd820[m
+Author: jinwoochu <cjw0672@naver.com>
+Date:   Mon Apr 30 00:49:19 2018 +0900
+
+    add userRegister
+
+[33mcommit 7e425c4648f970eb397d41543aff70ec22e07027[m[33m ([m[1;32mfront[m[33m)[m
+Author: jinwoochu <cjw0672@naver.com>
+Date:   Sun Apr 29 20:18:20 2018 +0900
+
+    add userLoginPage
+
+[33mcommit 2076a42939661fe918dcfedce5931a6718f5bb33[m
+Author: jinwoochu <cjw0672@naver.com>
+Date:   Sun Apr 29 18:27:35 2018 +0900
+
+    first

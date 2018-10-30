@@ -11,8 +11,6 @@ var usersRouter = require('./routes/users');
 var jangbooRouter = require('./routes/jangboo');
 var adminsRouter = require('./routes/admins');
 
-
-
 var app = express();
 
 // view engine setup

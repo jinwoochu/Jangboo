@@ -27,10 +27,10 @@ exports.register = function(req, res) {
     var phoneNumber = req.body.phoneNumber;
 
     var birthTmp = req.body.birthDay;
-    var year = birthTmp.substring(0,4);
-    var month = birthTmp.substring(4,6);
-    var day = birthTmp.substring(6,8);
-    var birthDay = year+"-"+month+"-"+day;
+    var year = birthTmp.substring(0, 4);
+    var month = birthTmp.substring(4, 6);
+    var day = birthTmp.substring(6, 8);
+    var birthDay = year + "-" + month + "-" + day;
 
     var insertQuery = "INSERT INTO `users` (id, password, user_name, birth_day, phone, sex) VALUES (?,?,?,?,?,?)";
     var insertQueryParams = [id, password, userName, birthDay, phoneNumber, sex];
@@ -50,7 +50,7 @@ exports.register = function(req, res) {
 
 
 // 유저 로그인
-exports.login = function (req,res) {
+exports.login = function(req, res) {
 
     var id = req.body.id;
     // var password = getSecretPassword(req.body.password);

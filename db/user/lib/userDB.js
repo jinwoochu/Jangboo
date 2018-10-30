@@ -24,16 +24,13 @@ exports.register = function(req, res) {
 
 
     var sex = req.body.sex;
-    // var birthDay = req.body.birthDay;
-    // var date = new Date();
-    var birthDay = "2018-05-20";
     var phoneNumber = req.body.phoneNumber;
 
     var birthTmp = req.body.birthDay;
-    var year = "19"+birthTmp.substring(0,2);
-    var month = birthTmp.substring(2,4);
-    var day = birthTmp.substring(4,6);
-    var birthDay = year+"-"+month+"-"+day;
+    var year = birthTmp.substring(0, 4);
+    var month = birthTmp.substring(4, 6);
+    var day = birthTmp.substring(6, 8);
+    var birthDay = year + "-" + month + "-" + day;
 
     var insertQuery = "INSERT INTO `users` (id, password, user_name, birth_day, phone, sex) VALUES (?,?,?,?,?,?)";
     var insertQueryParams = [id, password, userName, birthDay, phoneNumber, sex];
@@ -53,7 +50,7 @@ exports.register = function(req, res) {
 
 
 // 유저 로그인
-exports.login = function (req,res) {
+exports.login = function(req, res) {
 
     var id = req.body.id;
     // var password = getSecretPassword(req.body.password);
